@@ -1,0 +1,1947 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من هو الصديق الحقيقي وكيف تحافظ عليه؟ | حقوق الصديق</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cairo & Amiri for Arabic, Plus Jakarta Sans for English -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            450: '#10b981',
+                            950: '#022c22',
+                        },
+                        amber: {
+                            450: '#f59e0b',
+                        }
+                    },
+                    fontFamily: {
+                        arabic: ['Cairo', 'sans-serif'],
+                        serifAr: ['Amiri', 'serif'],
+                        english: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Dynamic Font Switching based on dir/lang */
+        html[lang="ar"] body {
+            font-family: 'Cairo', sans-serif;
+        }
+        html[lang="en"] body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .quote-font {
+            font-family: 'Amiri', serif;
+        }
+        html[lang="en"] .quote-font {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-style: italic;
+        }
+
+        /* Smooth Transitions */
+        body, .theme-transition {
+            transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        /* Glassmorphism */
+        .glass-card {
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.1);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #10b981;
+            border-radius: 9999px;
+        }
+
+        /* Decorative subtle background pattern */
+        .bg-islamic-pattern {
+            background-image: radial-gradient(rgba(16, 185, 129, 0.12) 1.5px, transparent 1.5px), radial-gradient(rgba(245, 158, 11, 0.08) 1.5px, transparent 1.5px);
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
+        }
+
+        /* Interactive Card Hover Effects */
+        .hover-lift {
+            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Pulse Glow */
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { box-shadow: 0 0 25px 6px rgba(16, 185, 129, 0.2); }
+        }
+        .glow-emerald {
+            animation: pulseGlow 3s infinite;
+        }
+
+        /* Range slider styling */
+        input[type="range"] {
+            accent-color: #10b981;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 bg-islamic-pattern min-h-screen flex flex-col selection:bg-emerald-500 selection:text-white">
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none flex flex-col gap-2 items-center w-11/12 max-w-md"></div>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/80 backdrop-blur-md p-4">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl animate-fadeIn">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-800">
+                <div class="flex items-center gap-3">
+                    <span class="w-9 h-9 rounded-xl bg-red-500/10 text-red-500 flex items-center justify-center">
+                        <i class="fa-brands fa-youtube text-xl"></i>
+                    </span>
+                    <h3 id="modal-title" class="font-bold text-base sm:text-lg text-slate-800 dark:text-white">
+                        من هو الصديق الحقيقي وكيف تحافظ عليه؟ - Abouawd Studio
+                    </h3>
+                </div>
+                <button onclick="closeVideoModal()" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-red-500 flex items-center justify-center transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div class="aspect-video w-full bg-black relative">
+                <iframe id="youtube-iframe" class="w-full h-full" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="px-6 py-4 bg-slate-50 dark:bg-slate-900/60 flex flex-wrap items-center justify-between gap-3">
+                <p id="modal-timestamp-note" class="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+                    يمكنك أيضاً فتح الفيديو مباشرة على يوتيوب للمشاهدة بجودة كاملة.
+                </p>
+                <a href="https://youtu.be/QdljMPV8wLQ?si=OlWNEKo_eCVI-MuP" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs sm:text-sm font-bold transition shadow">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <span data-i18n="openYoutubeDirect">فتح في يوتيوب</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Sticky Navigation Bar -->
+    <header class="sticky top-0 z-40 glass-card bg-white/85 dark:bg-slate-900/85 border-b border-slate-200/80 dark:border-slate-800/80 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2">
+            <!-- Brand Logo & Title -->
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white shadow-lg shadow-emerald-500/25 group-hover:scale-105 transition">
+                    <i class="fa-solid fa-handshake-angle text-lg sm:text-xl"></i>
+                </div>
+                <div>
+                    <span class="block font-extrabold text-sm sm:text-base text-slate-900 dark:text-white leading-tight" data-i18n="navBrandTitle">ميثاق الصداقة</span>
+                    <span class="block text-[11px] sm:text-xs text-emerald-600 dark:text-emerald-400 font-medium" data-i18n="navBrandSub">حقوق الصديق • Abouawd Studio</span>
+                </div>
+            </a>
+
+            <!-- Desktop Quick Navigation Links -->
+            <nav class="hidden lg:flex items-center gap-1 bg-slate-100/90 dark:bg-slate-800/70 p-1.5 rounded-2xl border border-slate-200/60 dark:border-slate-700/60">
+                <a href="#knowledge" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-emerald-600 dark:hover:text-emerald-400 transition" data-i18n="navPillars">محاور الكتاب</a>
+                <a href="#types" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-emerald-600 dark:hover:text-emerald-400 transition" data-i18n="navTypes">أنواع الأصدقاء الـ3</a>
+                <a href="#tests" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-emerald-600 dark:hover:text-emerald-400 transition" data-i18n="navTests">اختبارات المواقف</a>
+                <a href="#rights" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-emerald-600 dark:hover:text-emerald-400 transition" data-i18n="navRights">الحقوق الـ6</a>
+                <a href="#compass-tool" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-emerald-700 dark:text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/20 transition" data-i18n="navCompass">بوصلة الصديق</a>
+                <a href="#self-quiz" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-amber-700 dark:text-amber-300 bg-amber-500/10 hover:bg-amber-500/20 transition" data-i18n="navQuiz">اختبر وفاءك</a>
+                <a href="#card-generator" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 transition" data-i18n="navCard">بطاقة شكر</a>
+            </nav>
+
+            <!-- Action Controls: Language Toggle & Theme Toggle -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <!-- Language Switcher -->
+                <button id="lang-toggle-btn" onclick="toggleLanguage()" class="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 border border-slate-200/80 dark:border-slate-700 text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-100 transition shadow-sm" title="Switch Language / تغيير اللغة">
+                    <i class="fa-solid fa-globe text-emerald-500"></i>
+                    <span id="lang-btn-text">English</span>
+                </button>
+
+                <!-- Dark/Light Theme Toggle -->
+                <button id="theme-toggle-btn" onclick="toggleTheme()" class="w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 border border-slate-200/80 dark:border-slate-700 flex items-center justify-center text-slate-700 dark:text-amber-400 transition shadow-sm" title="Toggle Dark/Light Mode">
+                    <i id="theme-icon" class="fa-solid fa-sun text-base sm:text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Horizontal Scroll Navigation -->
+        <div class="lg:hidden flex items-center gap-2 overflow-x-auto px-4 py-2 border-t border-slate-200/60 dark:border-slate-800/60 text-xs whitespace-nowrap">
+            <a href="#knowledge" class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-semibold" data-i18n="navPillars">محاور الكتاب</a>
+            <a href="#types" class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-semibold" data-i18n="navTypes">أنواع الأصدقاء</a>
+            <a href="#tests" class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-semibold" data-i18n="navTests">اختبارات الصدق</a>
+            <a href="#rights" class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-semibold" data-i18n="navRights">الحقوق الـ6</a>
+            <a href="#compass-tool" class="px-3 py-1 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 font-bold" data-i18n="navCompass">بوصلة الصديق</a>
+            <a href="#self-quiz" class="px-3 py-1 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-400 font-bold" data-i18n="navQuiz">اختبر وفاءك</a>
+            <a href="#card-generator" class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-semibold" data-i18n="navCard">بطاقة شكر</a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow">
+
+        <!-- 1. HERO SECTION -->
+        <section id="hero" class="relative overflow-hidden py-10 sm:py-16 lg:py-20">
+            <!-- Decorative Ambient Blobs -->
+            <div class=" -top-24 -right-24 w-96 h-96 bg-emerald-500/15 dark:bg-emerald-500/10 rounded-full blur-3xl pointer-events-none absolute"></div>
+            <div class="-bottom-24 -left-24 w-96 h-96 bg-amber-500/15 dark:bg-amber-500/10 rounded-full blur-3xl pointer-events-none absolute"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                    
+                    <!-- Hero Text Column -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-start">
+                        <!-- Badge -->
+                        <div class="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 text-xs sm:text-sm font-bold">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                            <span data-i18n="heroBadge">خلاصة تفاعلية لكتاب «حقوق الصديق وكيف تتعامل معه» • الشيخ أحمد بن ناصر الطيار</span>
+                        </div>
+
+                        <!-- Main Title -->
+                        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white leading-tight tracking-tight">
+                            <span data-i18n="heroTitlePart1">من هو الصديق الحقيقي</span>
+                            <span class="block mt-2 bg-gradient-to-r from-emerald-600 via-teal-500 to-amber-500 dark:from-emerald-400 dark:via-teal-300 dark:to-amber-400 bg-clip-text text-transparent" data-i18n="heroTitlePart2">وكيف تحافظ عليه؟</span>
+                        </h1>
+
+                        <!-- Intro Description -->
+                        <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed" data-i18n="heroDescription">
+                            كم شخصاً في حياتك تطلق عليه كلمة «صديق»؟ وهل كل من يبتسم في وجهك أو يجلس معك وقت الفراغ هو صديق حقيقي؟ رحلة معرفية وعملية تفاعلية مستوحاة من فيديو قناة Abouawd Studio لاكتشاف معدن الأصدقاء وفنون الحفاظ على المودة.
+                        </p>
+
+                        <!-- Featured Golden Quote Box -->
+                        <div class="relative p-6 sm:p-7 rounded-3xl bg-gradient-to-br from-emerald-900 via-emerald-950 to-slate-900 text-white shadow-xl border border-emerald-500/30 overflow-hidden">
+                            <i class="fa-solid fa-quote-right text-6xl text-emerald-500/15 absolute top-3 right-4 pointer-events-none"></i>
+                            <div class="relative z-10 space-y-3">
+                                <div class="flex items-center justify-center lg:justify-start gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span data-i18n="heroQuoteLabel">الخلاصة الذهبية للصداقة [00:05:32]</span>
+                                </div>
+                                <blockquote class="quote-font text-xl sm:text-2xl lg:text-3xl font-bold text-emerald-50 leading-relaxed" data-i18n="heroQuoteText">
+                                    «الصديق الحقيقي هو من إذا غبتَ حفظك، وإذا أخطأتَ عذرك، وإذا احتجته وجدته بجانبك»
+                                </blockquote>
+                            </div>
+                        </div>
+
+                        <!-- CTA Buttons -->
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
+                            <a href="#compass-tool" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm sm:text-base shadow-lg shadow-emerald-600/25 hover-lift">
+                                <i class="fa-solid fa-compass text-lg"></i>
+                                <span data-i18n="heroBtnCompass">جرّب بوصلة تصنيف الصديق</span>
+                            </a>
+
+                            <button onclick="openVideoAt(0)" class="inline-flex items-center gap-2.5 px-5 py-3.5 rounded-2xl bg-white dark:bg-slate-900 hover:bg-red-50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-700 font-bold text-sm sm:text-base shadow-sm hover-lift">
+                                <i class="fa-brands fa-youtube text-red-500 text-xl"></i>
+                                <span data-i18n="heroBtnWatch">مشاهدة الفيديو الأصلي</span>
+                            </button>
+
+                            <a href="https://youtu.be/QdljMPV8wLQ?si=OlWNEKo_eCVI-MuP" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-3.5 rounded-2xl bg-slate-200/70 dark:bg-slate-800/70 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs sm:text-sm font-semibold transition" title="YouTube Direct Link">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                <span>YouTube</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hero Interactive Book & Video Overview Card -->
+                    <div class="lg:col-span-5">
+                        <div class="glass-card bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+                            <div class="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-emerald-500 via-amber-500 to-teal-500"></div>
+                            
+                            <!-- Book & Video Header -->
+                            <div class="flex items-start justify-between gap-4 mb-6">
+                                <div>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400" data-i18n="cardBookTag">بطاقة المصدر المعرفي</span>
+                                    <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white mt-1" data-i18n="cardBookTitle">كتاب: حقوق الصديق وكيف تتعامل معه</h2>
+                                    <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5" data-i18n="cardBookAuthor">تأليف: الشيخ أحمد بن ناصر الطيار • عرض: Abouawd Studio</p>
+                                </div>
+                                <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 shrink-0">
+                                    <i class="fa-solid fa-book-open-reader text-xl"></i>
+                                </div>
+                            </div>
+
+                            <!-- Interactive Video Chapters Timeline -->
+                            <div class="space-y-2.5 mb-6">
+                                <div class="text-xs font-bold text-slate-500 dark:text-slate-400 flex items-center justify-between">
+                                    <span data-i18n="timelineHeading">خريطة محاور الفيديو التفاعلية (اضغط للانتقال):</span>
+                                    <span class="text-emerald-600 dark:text-emerald-400 font-mono">06:34</span>
+                                </div>
+
+                                <button onclick="scrollToSection('knowledge')" class="w-full flex items-center justify-between p-3 rounded-2xl bg-slate-50 hover:bg-emerald-50 dark:bg-slate-800/60 dark:hover:bg-emerald-950/50 border border-slate-200/70 dark:border-slate-700/60 transition text-start group">
+                                    <div class="flex items-center gap-3">
+                                        <span class="px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono text-xs font-bold">00:59</span>
+                                        <span class="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-400" data-i18n="ch1Title">معنى الصداقة ولماذا الصديق من «الصدق»؟</span>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-left text-xs text-slate-400 group-hover:text-emerald-500"></i>
+                                </button>
+
+                                <button onclick="scrollToSection('types')" class="w-full flex items-center justify-between p-3 rounded-2xl bg-slate-50 hover:bg-emerald-50 dark:bg-slate-800/60 dark:hover:bg-emerald-950/50 border border-slate-200/70 dark:border-slate-700/60 transition text-start group">
+                                    <div class="flex items-center gap-3">
+                                        <span class="px-2.5 py-1 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 font-mono text-xs font-bold">01:59</span>
+                                        <span class="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-400" data-i18n="ch2Title">أنواع الأصدقاء الـ3: الغذاء والدواء والداء</span>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-left text-xs text-slate-400 group-hover:text-emerald-500"></i>
+                                </button>
+
+                                <button onclick="scrollToSection('tests')" class="w-full flex items-center justify-between p-3 rounded-2xl bg-slate-50 hover:bg-emerald-50 dark:bg-slate-800/60 dark:hover:bg-emerald-950/50 border border-slate-200/70 dark:border-slate-700/60 transition text-start group">
+                                    <div class="flex items-center gap-3">
+                                        <span class="px-2.5 py-1 rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400 font-mono text-xs font-bold">03:08</span>
+                                        <span class="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-400" data-i18n="ch3Title">الاختبارات الـ3 لكشف الصديق الحقيقي</span>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-left text-xs text-slate-400 group-hover:text-emerald-500"></i>
+                                </button>
+
+                                <button onclick="scrollToSection('rights')" class="w-full flex items-center justify-between p-3 rounded-2xl bg-slate-50 hover:bg-emerald-50 dark:bg-slate-800/60 dark:hover:bg-emerald-950/50 border border-slate-200/70 dark:border-slate-700/60 transition text-start group">
+                                    <div class="flex items-center gap-3">
+                                        <span class="px-2.5 py-1 rounded-lg bg-purple-500/10 text-purple-600 dark:text-purple-400 font-mono text-xs font-bold">03:35</span>
+                                        <span class="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-400" data-i18n="ch4Title">حقوق الصديق الـ6 والقاعدة الذهبية</span>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-left text-xs text-slate-400 group-hover:text-emerald-500"></i>
+                                </button>
+
+                                <button onclick="scrollToSection('self-quiz')" class="w-full flex items-center justify-between p-3 rounded-2xl bg-slate-50 hover:bg-emerald-50 dark:bg-slate-800/60 dark:hover:bg-emerald-950/50 border border-slate-200/70 dark:border-slate-700/60 transition text-start group">
+                                    <div class="flex items-center gap-3">
+                                        <span class="px-2.5 py-1 rounded-lg bg-rose-500/10 text-rose-600 dark:text-rose-400 font-mono text-xs font-bold">05:04</span>
+                                        <span class="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-400" data-i18n="ch5Title">كيف نطبق هذا في حياتنا؟ (اختبار عملي)</span>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-left text-xs text-slate-400 group-hover:text-emerald-500"></i>
+                                </button>
+                            </div>
+
+                            <!-- Stats Strip -->
+                            <div class="grid grid-cols-3 gap-2 pt-4 border-t border-slate-200 dark:border-slate-800 text-center">
+                                <div class="p-2 rounded-xl bg-slate-50 dark:bg-slate-800/50">
+                                    <span class="block text-lg sm:text-xl font-black text-emerald-600 dark:text-emerald-400">3</span>
+                                    <span class="text-[11px] text-slate-500 dark:text-slate-400 font-semibold" data-i18n="statTypes">أصناف للأصدقاء</span>
+                                </div>
+                                <div class="p-2 rounded-xl bg-slate-50 dark:bg-slate-800/50">
+                                    <span class="block text-lg sm:text-xl font-black text-amber-600 dark:text-amber-400">3</span>
+                                    <span class="text-[11px] text-slate-500 dark:text-slate-400 font-semibold" data-i18n="statTests">مواقف كاشفة</span>
+                                </div>
+                                <div class="p-2 rounded-xl bg-slate-50 dark:bg-slate-800/50">
+                                    <span class="block text-lg sm:text-xl font-black text-teal-600 dark:text-teal-400">6</span>
+                                    <span class="text-[11px] text-slate-500 dark:text-slate-400 font-semibold" data-i18n="statRights">حقوق وقواعد</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. MEANING OF FRIENDSHIP & KEEPING VS FINDING ([00:00:59] - [00:02:42]) -->
+        <section id="knowledge" class="py-12 sm:py-16 border-t border-slate-200/70 dark:border-slate-800/70">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                    <span class="px-3.5 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-extrabold uppercase tracking-wider" data-i18n="sec1Tag">المحور الأول • [00:00:59 - 00:02:55]</span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white" data-i18n="sec1Title">جوهر الصداقة: لماذا سُمّي الصديق صديقاً؟</h2>
+                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400" data-i18n="sec1Sub">
+                        الإنسان بطبيعته كائن اجتماعي لا يستطيع أن يعيش وحده، لكن الصداقة في ميزان الحكمة أعمق بكثير من مجرد قضاء وقت ممتع.
+                    </p>
+                </div>
+
+                <!-- Two-Column Deep Comparison -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                    
+                    <!-- Card A: Etymology & Essence of Friendship -->
+                    <div class="glass-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-lg flex flex-col justify-between">
+                        <div class="space-y-5">
+                            <div class="flex items-center justify-between">
+                                <div class="w-12 h-12 rounded-2xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-seedling"></i>
+                                </div>
+                                <button onclick="openVideoAt(59)" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-600 dark:text-slate-300 hover:text-emerald-500 transition">
+                                    <i class="fa-solid fa-play text-[10px]"></i> 00:59
+                                </button>
+                            </div>
+
+                            <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white" data-i18n="meaningCardTitle">الصداقة مشتقة من «الصدق»</h3>
+                            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="meaningCardDesc">
+                                يؤكد الشيخ أحمد بن ناصر الطيار أن الصداقة ليست مجرد ضحك أو جلسات سمر، بل هي التزام أخلاقي ووفاء متبادل، وسُمّي الصديق صديقاً لثلاثة معانٍ عظيمة:
+                            </p>
+
+                            <div class="space-y-3 pt-2">
+                                <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-emerald-50/70 dark:bg-emerald-950/30 border border-emerald-500/20">
+                                    <span class="w-7 h-7 rounded-lg bg-emerald-500 text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
+                                    <div>
+                                        <h4 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white" data-i18n="صدق1Title">الصدق في المحبة والمشاعر</h4>
+                                        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-0.5" data-i18n="صدق1Desc">محبة خالصة لله وبعيدة عن النفاق أو التملق أو المصالح المؤقتة.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-emerald-50/70 dark:bg-emerald-950/30 border border-emerald-500/20">
+                                    <span class="w-7 h-7 rounded-lg bg-emerald-500 text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
+                                    <div>
+                                        <h4 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white" data-i18n="صدق2Title">الصدق في النصيحة</h4>
+                                        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-0.5" data-i18n="صدق2Desc">يدلّك على الخير ويرشدك بلطف إذا أخطأت، ولا يجاملك على حساب دينك أو مصلحتك.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-emerald-50/70 dark:bg-emerald-950/30 border border-emerald-500/20">
+                                    <span class="w-7 h-7 rounded-lg bg-emerald-500 text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
+                                    <div>
+                                        <h4 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white" data-i18n="صدق3Title">الصدق في الموقف</h4>
+                                        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-0.5" data-i18n="صدق3Desc">ثبات ووُقوف حقيقي بجانبك في الأوقات الصعبة، لا مجرد وعود كلامية.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                            <span data-i18n="meaningFooter">الصديق الصالح يرفعك، والصديق السيئ قد يسحبك إلى الأسفل.</span>
+                            <i class="fa-solid fa-heart text-emerald-500"></i>
+                        </div>
+                    </div>
+
+                    <!-- Card B: Why Keeping a Friend is Harder than Finding One ([00:02:42]) -->
+                    <div class="glass-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-lg flex flex-col justify-between">
+                        <div class="space-y-5">
+                            <div class="flex items-center justify-between">
+                                <div class="w-12 h-12 rounded-2xl bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-shield-heart"></i>
+                                </div>
+                                <button onclick="openVideoAt(162)" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-600 dark:text-slate-300 hover:text-amber-500 transition">
+                                    <i class="fa-solid fa-play text-[10px]"></i> 02:42
+                                </button>
+                            </div>
+
+                            <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white" data-i18n="keepCardTitle">الحفاظ على الصديق أصعب من إيجاده!</h3>
+                            <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="keepCardDesc">
+                                يوضح الكتاب حقيقة مهمة جداً: قد تتعرف على صديق في موقف عابر، لكن استمرار الصداقة لسنوات طويلة يحتاج إلى ثلاث ركائز نفسية وأخلاقية (اضغط على كل ركيزة لاستكشافها):
+                            </p>
+
+                            <!-- Interactive Pillars Selector -->
+                            <div class="grid grid-cols-3 gap-2 pt-1">
+                                <button onclick="selectKeepPillar(0)" id="pillar-btn-0" class="p-3 rounded-2xl border-2 border-amber-500 bg-amber-500/10 text-amber-700 dark:text-amber-300 font-bold text-xs sm:text-sm transition flex flex-col items-center gap-1.5">
+                                    <i class="fa-solid fa-hourglass-half text-base"></i>
+                                    <span data-i18n="pillar1Name">1. الصبر</span>
+                                </button>
+                                <button onclick="selectKeepPillar(1)" id="pillar-btn-1" class="p-3 rounded-2xl border-2 border-slate-200 dark:border-slate-800 hover:border-amber-500/50 text-slate-700 dark:text-slate-300 font-bold text-xs sm:text-sm transition flex flex-col items-center gap-1.5">
+                                    <i class="fa-solid fa-eye-slash text-base"></i>
+                                    <span data-i18n="pillar2Name">2. التغافل</span>
+                                </button>
+                                <button onclick="selectKeepPillar(2)" id="pillar-btn-2" class="p-3 rounded-2xl border-2 border-slate-200 dark:border-slate-800 hover:border-amber-500/50 text-slate-700 dark:text-slate-300 font-bold text-xs sm:text-sm transition flex flex-col items-center gap-1.5">
+                                    <i class="fa-solid fa-hand-holding-heart text-base"></i>
+                                    <span data-i18n="pillar3Name">3. التسامح</span>
+                                </button>
+                            </div>
+
+                            <!-- Dynamic Pillar Detail Box -->
+                            <div id="pillar-detail-box" class="p-5 rounded-2xl bg-amber-50/80 dark:bg-amber-950/25 border border-amber-500/30 space-y-2 transition-all">
+                                <h4 id="pillar-detail-title" class="font-extrabold text-base sm:text-lg text-amber-800 dark:text-amber-300">
+                                    الصبر على طباع الصديق وظروفه
+                                </h4>
+                                <p id="pillar-detail-desc" class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                                    لا يوجد إنسان كامل؛ فالصبر على اختلاف الطباع وتقلبات الظروف وضغوط الحياة هو الأساس الأول لبقاء الود وعدم انقطاع العلاقة عند أول عقبة.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                            <span data-i18n="keepFooter">من يبحث عن صديق بلا عيوب سيبقى بلا صديق!</span>
+                            <i class="fa-solid fa-scale-balanced text-amber-500"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. INTERACTIVE 3 TYPES OF FRIENDS EXPLORER ([00:01:59] - [00:02:27]) -->
+        <section id="types" class="py-12 sm:py-16 bg-slate-100/70 dark:bg-slate-900/40 border-t border-slate-200/70 dark:border-slate-800/70">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Header -->
+                <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+                    <div class="inline-flex items-center gap-2">
+                        <span class="px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-extrabold uppercase tracking-wider" data-i18n="sec2Tag">المحور الثاني • [00:01:59 - 00:02:27]</span>
+                        <button onclick="openVideoAt(119)" class="px-2.5 py-1 rounded-full bg-red-500/10 text-red-500 text-xs font-mono font-bold hover:bg-red-500 hover:text-white transition">
+                            <i class="fa-solid fa-play"></i> 01:59
+                        </button>
+                    </div>
+                    <h2 class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white" data-i18n="sec2Title">أنواع الأصدقاء الثلاثة في حياتك</h2>
+                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400" data-i18n="sec2Sub">
+                        يقسّم العلماء والحكماء الناس في علاقاتهم إلى ثلاثة أصناف دقيقة تشبه علاقة الجسد بالغذاء والدواء والداء. اضغط على أي صنف أو استعرض المقارنة الشاملة:
+                    </p>
+                </div>
+
+                <!-- 3 Interactive Type Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                    
+                    <!-- Type 1: Food (كالغذاء) -->
+                    <div class="glass-card bg-white dark:bg-slate-900 rounded-3xl border-2 border-emerald-500/60 dark:border-emerald-500/50 p-6 sm:p-7 shadow-xl hover-lift flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute top-0 inset-x-0 h-1.5 bg-emerald-500"></div>
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <span class="px-3 py-1 rounded-xl bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 font-extrabold text-xs" data-i18n="type1Badge">الصنف الأول • الأسمى</span>
+                                <div class="w-12 h-12 rounded-2xl bg-emerald-500 text-white flex items-center justify-center text-xl shadow-lg shadow-emerald-500/30">
+                                    <i class="fa-solid fa-wheat-awn"></i>
+                                </div>
+                            </div>
+
+                            <h3 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mb-2" data-i18n="type1Title">1. أصدقاء كالغذاء</h3>
+                            <p class="text-xs sm:text-sm font-bold text-emerald-600 dark:text-emerald-400 mb-4" data-i18n="type1Subtitle">لا تستطيع الاستغناء عنهم في حياتك</p>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5" data-i18n="type1Desc">
+                                هم الأصدقاء الحقيقيون الذين يقفون معك في كل الظروف، وجودهم يقوّي إيمانك وحياتك، ويبعث في نفسك الطمأنينة والسكينة تماماً كما يقوّي الغذاء الجسد.
+                            </p>
+
+                            <div class="space-y-2 border-t border-slate-100 dark:border-slate-800 pt-4">
+                                <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                                    <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                                    <span data-i18n="type1Trait1">ناصح أمين في السر والعلن</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                                    <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                                    <span data-i18n="type1Trait2">سند ثابت في الشدائد والأفراح</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                                    <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                                    <span data-i18n="type1Trait3">يحفظ غيبتك ويستر عيبك</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 p-3.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-xs font-bold text-emerald-800 dark:text-emerald-300 flex items-center gap-2">
+                            <i class="fa-solid fa-gem text-emerald-500 text-base"></i>
+                            <span data-i18n="type1Action">الوصية: استمسك بهم وعضّ على صداقتهم بالنواجذ.</span>
+                        </div>
+                    </div>
+
+                    <!-- Type 2: Medicine (كالدواء) -->
+                    <div class="glass-card bg-white dark:bg-slate-900 rounded-3xl border-2 border-amber-500/60 dark:border-amber-500/50 p-6 sm:p-7 shadow-xl hover-lift flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute top-0 inset-x-0 h-1.5 bg-amber-500"></div>
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <span class="px-3 py-1 rounded-xl bg-amber-500/15 text-amber-700 dark:text-amber-300 font-extrabold text-xs" data-i18n="type2Badge">الصنف الثاني • المتوازن</span>
+                                <div class="w-12 h-12 rounded-2xl bg-amber-500 text-white flex items-center justify-center text-xl shadow-lg shadow-amber-500/30">
+                                    <i class="fa-solid fa-capsules"></i>
+                                </div>
+                            </div>
+
+                            <h3 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mb-2" data-i18n="type2Title">2. أصدقاء كالدواء</h3>
+                            <p class="text-xs sm:text-sm font-bold text-amber-600 dark:text-amber-400 mb-4" data-i18n="type2Subtitle">تحتاج إليهم في أوقات ومواقف معينة</p>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5" data-i18n="type2Desc">
+                                تكون العلاقة معهم طيبة ومحترمة، وتتبادلون المنفعة والود في مواقف محددة أو زمالة عمل ودراسة، لكنها ليست علاقة عميقة أو يومية كصداقة الغذاء.
+                            </p>
+
+                            <div class="space-y-2 border-t border-slate-100 dark:border-slate-800 pt-4">
+                                <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                                    <i class="fa-solid fa-circle-dot text-amber-500"></i>
+                                    <span data-i18n="type2Trait1">علاقة قائمة على الاحترام المتبادل</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                                    <i class="fa-solid fa-circle-dot text-amber-500"></i>
+                                    <span data-i18n="type2Trait2">تعاون في مجالات أو أوقات محددة</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                                    <i class="fa-solid fa-circle-dot text-amber-500"></i>
+                                    <span data-i18n="type2Trait3">ليست مهيأة لمشاركة أدق الأسرار</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-xs font-bold text-amber-800 dark:text-amber-300 flex items-center gap-2">
+                            <i class="fa-solid fa-handshake-simple text-amber-500 text-base"></i>
+                            <span data-i18n="type2Action">الوصية: عاملهم بالمعروف واللطف والإنصاف دون تكلف.</span>
+                        </div>
+                    </div>
+
+                    <!-- Type 3: Disease (كالداء) -->
+                    <div class="glass-card bg-white dark:bg-slate-900 rounded-3xl border-2 border-rose-500/60 dark:border-rose-500/50 p-6 sm:p-7 shadow-xl hover-lift flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute top-0 inset-x-0 h-1.5 bg-rose-500"></div>
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <span class="px-3 py-1 rounded-xl bg-rose-500/15 text-rose-700 dark:text-rose-300 font-extrabold text-xs" data-i18n="type3Badge">الصنف الثالث • الخطر</span>
+                                <div class="w-12 h-12 rounded-2xl bg-rose-500 text-white flex items-center justify-center text-xl shadow-lg shadow-rose-500/30">
+                                    <i class="fa-solid fa-triangle-exclamation"></i>
+                                </div>
+                            </div>
+
+                            <h3 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mb-2" data-i18n="type3Title">3. أصدقاء كالداء</h3>
+                            <p class="text-xs sm:text-sm font-bold text-rose-600 dark:text-rose-400 mb-4" data-i18n="type3Subtitle">وجودهم ضرر وخطر على دينك ودنياك</p>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5" data-i18n="type3Desc">
+                                هم أخطر الأنواع؛ لأن وجودهم في حياتك قد يفسد أخلاقك أو يستنزف طاقتك ووقتك، أو يجرّك إلى المعاصي والأخطاء والندم.
+                            </p>
+
+                            <div class="space-y-2 border-t border-slate-100 dark:border-slate-800 pt-4">
+                                <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                                    <i class="fa-solid fa-circle-xmark text-rose-500"></i>
+                                    <span data-i18n="type3Trait1">يزيّنون الخطأ ويثبطونك عن الخير</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                                    <i class="fa-solid fa-circle-xmark text-rose-500"></i>
+                                    <span data-i18n="type3Trait2">يتخلون عنك وقت الحاجة والشدة</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                                    <i class="fa-solid fa-circle-xmark text-rose-500"></i>
+                                    <span data-i18n="type3Trait3">يكثرون السخرية أو الغيبة وإفشاء السر</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 p-3.5 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-xs font-bold text-rose-800 dark:text-rose-300 flex items-center gap-2">
+                            <i class="fa-solid fa-shield-virus text-rose-500 text-base"></i>
+                            <span data-i18n="type3Action">الوصية: ابتعد عنهم تدريجياً وبحكمة لحماية نفسك.</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. THE 3 REAL-LIFE TESTS OF A TRUE FRIEND ([00:03:08] - [00:03:22]) -->
+        <section id="tests" class="py-12 sm:py-16 border-t border-slate-200/70 dark:border-slate-800/70">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Header -->
+                <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+                    <div class="inline-flex items-center gap-2">
+                        <span class="px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 text-xs font-extrabold uppercase tracking-wider" data-i18n="sec3Tag">المحور الثالث • [00:03:08 - 00:03:25]</span>
+                        <button onclick="openVideoAt(188)" class="px-2.5 py-1 rounded-full bg-red-500/10 text-red-500 text-xs font-mono font-bold hover:bg-red-500 hover:text-white transition">
+                            <i class="fa-solid fa-play"></i> 03:08
+                        </button>
+                    </div>
+                    <h2 class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white" data-i18n="sec3Title">كيف تعرف الصديق الحقيقي؟ (الاختبارات الثلاثة)</h2>
+                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400" data-i18n="sec3Sub">
+                        الصداقة لا تظهر بالكلام الجميل في أوقات الرخاء، بل تظهر في المواقف الحقيقية. اضغط على زر «اكشف الاختبار العملي» في كل بطاقة:
+                    </p>
+                </div>
+
+                <!-- 3 Interactive Test Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                    
+                    <!-- Test 1: Travel -->
+                    <div class="glass-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-7 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-sky-500/15 text-sky-600 dark:text-sky-400 flex items-center justify-center text-2xl mb-5">
+                                <i class="fa-solid fa-plane-departure"></i>
+                            </div>
+                            <span class="text-xs font-extrabold text-sky-600 dark:text-sky-400 uppercase" data-i18n="test1Tag">الاختبار الأول</span>
+                            <h3 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-1 mb-3" data-i18n="test1Title">1. في السفر</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4" data-i18n="test1Summary">
+                                السفر يكشف طباع الإنسان الحقيقية؛ ففي السفر يتعب الإنسان وتضيق نفسه، وتسقط الأقنعة والتكلف.
+                            </p>
+
+                            <div id="test-detail-1" class="hidden p-4 rounded-2xl bg-sky-50 dark:bg-sky-950/30 border border-sky-500/20 text-xs sm:text-sm text-slate-700 dark:text-slate-300 space-y-2 mb-4">
+                                <p class="font-bold text-sky-700 dark:text-sky-300" data-i18n="test1DetailHeadline">ماذا تلاحظ في السفر؟</p>
+                                <p data-i18n="test1DetailBody">هل يؤثرك على نفسه أم يكون أنانياً؟ هل يتحمل مشقة الطريق بابتسامة وتعاون أم يكثر التذمر والغضب؟ سُمّي السفر سفراً لأنه يُسفر عن أخلاق الرجال.</p>
+                            </div>
+                        </div>
+
+                        <button onclick="toggleTestDetail(1)" class="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-sky-500 hover:text-white dark:bg-slate-800 dark:hover:bg-sky-600 text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-bold transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <span data-i18n="btnRevealTest">اكشف معيار الاختبار</span>
+                        </button>
+                    </div>
+
+                    <!-- Test 2: Hardship -->
+                    <div class="glass-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-7 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl mb-5">
+                                <i class="fa-solid fa-life-ring"></i>
+                            </div>
+                            <span class="text-xs font-extrabold text-emerald-600 dark:text-emerald-400 uppercase" data-i18n="test2Tag">الاختبار الثاني</span>
+                            <h3 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-1 mb-3" data-i18n="test2Title">2. وقت الضيق والشدة</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4" data-i18n="test2Summary">
+                                عندما تحتاج إلى مساعدة حقيقية أو تمر بأزمة مالية أو صحية أو نفسية، يظهر من يقف بجانبك فعلاً.
+                            </p>
+
+                            <div id="test-detail-2" class="hidden p-4 rounded-2xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-500/20 text-xs sm:text-sm text-slate-700 dark:text-slate-300 space-y-2 mb-4">
+                                <p class="font-bold text-emerald-700 dark:text-emerald-300" data-i18n="test2DetailHeadline">ماذا تلاحظ وقت الضيق؟</p>
+                                <p data-i18n="test2DetailBody">في الرخاء يتكاثر الأصحاب حولك، أما عند المحنة فالصديق الصادق يبادر بالسؤال والعون قبل أن تطلب منه، بينما يختفي أصدقاء المصلحة.</p>
+                            </div>
+                        </div>
+
+                        <button onclick="toggleTestDetail(2)" class="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-emerald-500 hover:text-white dark:bg-slate-800 dark:hover:bg-emerald-600 text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-bold transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <span data-i18n="btnRevealTest">اكشف معيار الاختبار</span>
+                        </button>
+                    </div>
+
+                    <!-- Test 3: Anger & Disagreement -->
+                    <div class="glass-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-7 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center text-2xl mb-5">
+                                <i class="fa-solid fa-fire-flame-simple"></i>
+                            </div>
+                            <span class="text-xs font-extrabold text-amber-600 dark:text-amber-400 uppercase" data-i18n="test3Tag">الاختبار الثالث</span>
+                            <h3 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-1 mb-3" data-i18n="test3Title">3. وقت الخلاف والغضب</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4" data-i18n="test3Summary">
+                                لأن معدن الإنسان الحقيقي ونُبله يظهران عندما يغضب أو يختلف معك في الرأي أو المصلحة.
+                            </p>
+
+                            <div id="test-detail-3" class="hidden p-4 rounded-2xl bg-amber-50 dark:bg-amber-950/30 border border-amber-500/20 text-xs sm:text-sm text-slate-700 dark:text-slate-300 space-y-2 mb-4">
+                                <p class="font-bold text-amber-700 dark:text-amber-300" data-i18n="test3DetailHeadline">ماذا تلاحظ وقت الغضب؟</p>
+                                <p data-i18n="test3DetailBody">هل يحفظ الود القديم والأسرار عند الخلاف؟ أم ينسى كل خير ويفجر في الخصومة؟ الأصيل يغضب باعتدال ولا يهدم جسر المودة.</p>
+                            </div>
+                        </div>
+
+                        <button onclick="toggleTestDetail(3)" class="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-amber-500 hover:text-white dark:bg-slate-800 dark:hover:bg-amber-600 text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-bold transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <span data-i18n="btnRevealTest">اكشف معيار الاختبار</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. THE 6 RIGHTS & GOLDEN RULES OF FRIENDSHIP ([00:03:35] - [00:04:52]) -->
+        <section id="rights" class="py-12 sm:py-16 bg-slate-100/70 dark:bg-slate-900/40 border-t border-slate-200/70 dark:border-slate-800/70">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Header -->
+                <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+                    <div class="inline-flex items-center gap-2">
+                        <span class="px-3.5 py-1 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 text-xs font-extrabold uppercase tracking-wider" data-i18n="sec4Tag">المحور الرابع • [00:03:35 - 00:04:52]</span>
+                        <button onclick="openVideoAt(215)" class="px-2.5 py-1 rounded-full bg-red-500/10 text-red-500 text-xs font-mono font-bold hover:bg-red-500 hover:text-white transition">
+                            <i class="fa-solid fa-play"></i> 03:35
+                        </button>
+                    </div>
+                    <h2 class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white" data-i18n="sec4Title">الحقوق الـ6 والقاعدة الذهبية للتعامل مع الصديق</h2>
+                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400" data-i18n="sec4Sub">
+                        يركز كتاب «حقوق الصديق وكيف تتعامل معه» على 6 قواعد عملية تحفظ الصداقة من التآكل. يمكنك تحديد القواعد التي تطبقها لمتابعة تقدمك:
+                    </p>
+                </div>
+
+                <!-- Progress Bar for Checked Rights -->
+                <div class="max-w-xl mx-auto mb-8 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div class="flex items-center justify-between text-xs sm:text-sm font-bold mb-2">
+                        <span class="text-slate-700 dark:text-slate-300" data-i18n="rightsChecklistLabel">مؤشر التزامك الشخصي بحقوق الصداقة:</span>
+                        <span id="rights-progress-text" class="text-emerald-600 dark:text-emerald-400">0 / 6</span>
+                    </div>
+                    <div class="w-full h-2.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                        <div id="rights-progress-bar" class="h-full bg-gradient-to-r from-emerald-500 to-teal-400 transition-all duration-300" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- 6 Rights Grid (Generated dynamically by JS for instant bilingual updates) -->
+                <div id="rights-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+            </div>
+        </section>
+
+        <!-- 6. INTERACTIVE TOOL 1: FRIEND COMPASS (بوصلة تصنيف الصديق) -->
+        <section id="compass-tool" class="py-12 sm:py-16 border-t border-slate-200/70 dark:border-slate-800/70">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="glass-card bg-white dark:bg-slate-900 border-2 border-emerald-500/30 dark:border-emerald-500/30 rounded-3xl p-6 sm:p-10 shadow-2xl">
+                    <!-- Tool Header -->
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-200 dark:border-slate-800">
+                        <div class="space-y-1">
+                            <span class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+                                <i class="fa-solid fa-compass"></i>
+                                <span data-i18n="tool1Badge">أداة تشخيصية تفاعلية #1</span>
+                            </span>
+                            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white" data-i18n="tool1Title">بوصلة تصنيف الصديق (غذاء • دواء • داء)</h2>
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400" data-i18n="tool1Sub">
+                                ضع شخصاً معيناً في ذهنك وأجب عن هذه المواقف الـ 6 المستخلصة من معايير الكتاب لمعرفة تصنيف العلاقة وكيف تتعامل معه.
+                            </p>
+                        </div>
+                        <button onclick="resetCompass()" class="self-start sm:self-center px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-xs font-bold text-slate-600 dark:text-slate-300 transition shrink-0">
+                            <i class="fa-solid fa-rotate-right mx-1"></i>
+                            <span data-i18n="btnReset">إعادة ضبط</span>
+                        </button>
+                    </div>
+
+                    <!-- Optional Friend Initials Input -->
+                    <div class="my-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-700/60">
+                        <label for="compass-friend-name" class="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 shrink-0" data-i18n="compassNameLabel">
+                            اسم أو رمز الصديق (اختياري - يبقى في متصفحك فقط):
+                        </label>
+                        <input id="compass-friend-name" type="text" maxlength="30" class="w-full px-4 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm font-semibold focus:outline-none focus:border-emerald-500" data-i18n-placeholder="compassNamePlaceholder" placeholder="مثال: أحمد / صديق العمل...">
+                    </div>
+
+                    <!-- Questions Container -->
+                    <div id="compass-questions-container" class="space-y-6"></div>
+
+                    <!-- Result Box -->
+                    <div id="compass-result-box" class="mt-8 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-slate-900 to-emerald-950 text-white shadow-xl border border-emerald-500/40">
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                            <div class="md:col-span-4 text-center space-y-2 border-b md:border-b-0 md:border-e border-white/10 pb-4 md:pb-0 md:pe-4">
+                                <div id="compass-result-icon" class="w-16 h-16 rounded-2xl bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 flex items-center justify-center text-3xl mx-auto">
+                                    <i class="fa-solid fa-wheat-awn"></i>
+                                </div>
+                                <div class="text-xs text-emerald-300 font-bold uppercase" data-i18n="compassResultLabel">نتيجة البوصلة الحالية</div>
+                                <h3 id="compass-result-title" class="text-2xl font-black text-white">صديق كالغذاء</h3>
+                                <div id="compass-score-badge" class="inline-block px-3 py-1 rounded-full bg-white/10 text-xs font-mono font-bold text-amber-300">
+                                    100%
+                                </div>
+                            </div>
+                            <div class="md:col-span-8 space-y-3">
+                                <h4 id="compass-advice-heading" class="text-base sm:text-lg font-extrabold text-amber-300">
+                                    توصية كتاب «حقوق الصديق»:
+                                </h4>
+                                <p id="compass-result-desc" class="text-xs sm:text-sm text-slate-200 leading-relaxed"></p>
+                                <div id="compass-action-steps" class="pt-2 flex flex-wrap gap-2"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. INTERACTIVE TOOL 2: SELF-REFLECTION QUIZ ([00:05:04]) -->
+        <section id="self-quiz" class="py-12 sm:py-16 bg-slate-100/70 dark:bg-slate-900/40 border-t border-slate-200/70 dark:border-slate-800/70">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="glass-card bg-white dark:bg-slate-900 border-2 border-amber-500/30 rounded-3xl p-6 sm:p-10 shadow-2xl">
+                    <!-- Header -->
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-200 dark:border-slate-800">
+                        <div class="space-y-1">
+                            <div class="inline-flex items-center gap-2">
+                                <span class="text-xs font-extrabold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+                                    <i class="fa-solid fa-mirror"></i>
+                                    <span data-i18n="tool2Badge">أداة المحاسبة الذاتية #2 • [00:05:04]</span>
+                                </span>
+                                <button onclick="openVideoAt(304)" class="px-2 py-0.5 rounded-lg bg-red-500/10 text-red-500 text-xs font-mono font-bold hover:bg-red-500 hover:text-white transition">
+                                    <i class="fa-solid fa-play"></i> 05:04
+                                </button>
+                            </div>
+                            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white" data-i18n="tool2Title">كيف نطبق هذا في حياتنا؟ هل أنت صديق مخلص؟</h2>
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400" data-i18n="tool2Sub">
+                                يقول الفيديو في الدقيقة [05:04]: «الأمر يبدأ منك أنت.. قبل أن تبحث عن صديق مثالي، اسأل نفسك: هل أنا صديق مخلص؟». حرك المؤشرات لتقييم نفسك بصدق:
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Sliders List -->
+                    <div id="self-quiz-sliders" class="space-y-5 my-8"></div>
+
+                    <!-- Self-Reflection Live Score & Feedback -->
+                    <div class="p-6 sm:p-8 rounded-3xl bg-amber-500/10 dark:bg-amber-950/30 border border-amber-500/30">
+                        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                            <div class="space-y-2 text-center md:text-start">
+                                <span class="text-xs font-extrabold uppercase text-amber-700 dark:text-amber-400" data-i18n="selfIndexLabel">مؤشر الوفاء والنضج في الصداقة</span>
+                                <h3 id="self-quiz-rank" class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">صديق وفيّ ومُلهم</h3>
+                                <p id="self-quiz-feedback" class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 max-w-xl leading-relaxed"></p>
+                            </div>
+                            <div class="flex flex-col items-center justify-center shrink-0 bg-white dark:bg-slate-900 px-6 py-4 rounded-2xl border border-amber-500/30 shadow-md">
+                                <span id="self-quiz-percentage" class="text-3xl sm:text-4xl font-black text-emerald-600 dark:text-emerald-400">85%</span>
+                                <span class="text-[11px] font-bold text-slate-500 dark:text-slate-400 mt-1" data-i18n="selfScoreSub">درجة التطبيق العملي</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. INTERACTIVE TOOL 3: SHAREABLE APPRECIATION CARD GENERATOR ([00:06:00]) -->
+        <section id="card-generator" class="py-12 sm:py-16 border-t border-slate-200/70 dark:border-slate-800/70">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Header -->
+                <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+                    <span class="px-3.5 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-extrabold uppercase tracking-wider" data-i18n="tool3Badge">أداة تفاعلية #3 • مبادرة الوفاء [00:06:00]</span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white" data-i18n="tool3Title">اصنع بطاقة شكر لصديقك الحقيقي</h2>
+                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400" data-i18n="tool3Sub">
+                        في ختام الفيديو: «إذا كان لديك صديق حقيقي، فتمسك به؛ فالأصدقاء الأوفياء عملة نادرة في هذا الزمان.. وشارك هذه الرسالة مع صديق تعتبره من الأوفياء».
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Controls Column -->
+                    <div class="lg:col-span-5 glass-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-7 shadow-lg space-y-5">
+                        <div>
+                            <label class="block text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 mb-2" data-i18n="cardRecipientLabel">اسم صديقك الوفي:</label>
+                            <input id="card-friend-input" type="text" oninput="updateAppreciationCard()" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm font-bold focus:outline-none focus:border-emerald-500" data-i18n-placeholder="cardRecipientPlaceholder" placeholder="مثال: أخي وصديقي عمر">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 mb-2" data-i18n="cardSenderLabel">اسمك (المُرسل):</label>
+                            <input id="card-sender-input" type="text" oninput="updateAppreciationCard()" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm font-bold focus:outline-none focus:border-emerald-500" data-i18n-placeholder="cardSenderPlaceholder" placeholder="مثال: محمد">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 mb-2" data-i18n="cardQuoteSelectLabel">اختر رسالة الإهداء:</label>
+                            <select id="card-quote-select" onchange="updateAppreciationCard()" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm font-semibold focus:outline-none focus:border-emerald-500"></select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 mb-2" data-i18n="cardThemeLabel">لون تصميم البطاقة:</label>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button onclick="setCardStyle('emerald')" class="py-2 px-3 rounded-xl bg-emerald-800 text-white text-xs font-bold border-2 border-emerald-400">زمردي</button>
+                                <button onclick="setCardStyle('amber')" class="py-2 px-3 rounded-xl bg-amber-800 text-white text-xs font-bold border-2 border-transparent hover:border-amber-400">عنبر ذهبي</button>
+                                <button onclick="setCardStyle('slate')" class="py-2 px-3 rounded-xl bg-slate-900 text-white text-xs font-bold border-2 border-transparent hover:border-slate-400">ليلي ملكي</button>
+                            </div>
+                        </div>
+
+                        <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                            <button onclick="copyCardMessage()" class="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs sm:text-sm shadow-lg shadow-emerald-600/20 flex items-center justify-center gap-2 transition">
+                                <i class="fa-solid fa-copy"></i>
+                                <span data-i18n="btnCopyCard">نسخ نص الرسالة والإهداء</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Live Preview Card Column -->
+                    <div class="lg:col-span-7">
+                        <div id="appreciation-card-preview" class="rounded-3xl p-8 sm:p-10 bg-gradient-to-br from-emerald-900 via-teal-950 to-slate-950 text-white shadow-2xl border-2 border-emerald-500/40 relative overflow-hidden">
+                            <i class="fa-solid fa-handshake-angle text-8xl text-white/5 absolute -bottom-4 -left-4 pointer-events-none"></i>
+                            <div class="relative z-10 space-y-6">
+                                <div class="flex items-center justify-between border-b border-white/15 pb-4">
+                                    <div class="flex items-center gap-2.5">
+                                        <span class="w-9 h-9 rounded-xl bg-amber-400/20 text-amber-300 flex items-center justify-center">
+                                            <i class="fa-solid fa-award"></i>
+                                        </span>
+                                        <span class="text-xs sm:text-sm font-bold text-emerald-200" data-i18n="previewHeaderBadge">وسام الصديق الوفي • عملة نادرة</span>
+                                    </div>
+                                    <span class="text-xs text-white/60 font-mono">Abouawd Studio</span>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <span class="text-xs text-amber-300 font-semibold" data-i18n="previewToLabel">إهداء خاص إلى:</span>
+                                    <h3 id="preview-friend-name" class="text-2xl sm:text-3xl font-black text-white">صديقي العزيز</h3>
+                                </div>
+
+                                <blockquote id="preview-quote-text" class="quote-font text-lg sm:text-2xl text-emerald-50 leading-relaxed bg-white/5 p-5 rounded-2xl border border-white/10">
+                                    «الصديق الحقيقي هو من إذا غبتَ حفظك، وإذا أخطأتَ عذرك، وإذا احتجته وجدته بجانبك.. شكراً لأنك من الأصدقاء الذين هم كالغذاء للروح.»
+                                </blockquote>
+
+                                <div class="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-white/15 text-xs sm:text-sm">
+                                    <div>
+                                        <span class="text-white/60" data-i18n="previewFromLabel">بكل الود والوفاء من:</span>
+                                        <strong id="preview-sender-name" class="text-amber-300 mx-1">صديقك المحب</strong>
+                                    </div>
+                                    <span class="text-[11px] text-emerald-300/90" data-i18n="previewBookRef">مستلهم من كتاب «حقوق الصديق وكيف تتعامل معه»</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 9. FOOTER & MANDATORY SIGNATURE -->
+    <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 pt-10 pb-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-slate-200/80 dark:border-slate-800/80 text-center md:text-start">
+                <div class="space-y-1">
+                    <div class="flex items-center justify-center md:justify-start gap-2.5">
+                        <span class="w-8 h-8 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-sm">
+                            <i class="fa-solid fa-handshake-angle"></i>
+                        </span>
+                        <span class="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white" data-i18n="footerTitle">من هو الصديق الحقيقي وكيف تحافظ عليه؟</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400" data-i18n="footerSource">
+                        مبني على تلخيص كتاب «حقوق الصديق وكيف تتعامل معه» للشيخ أحمد بن ناصر الطيار • قناة Abouawd Studio
+                    </p>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <a href="https://youtu.be/QdljMPV8wLQ?si=OlWNEKo_eCVI-MuP" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-red-500/10 hover:bg-red-500 text-red-600 dark:text-red-400 hover:text-white text-xs sm:text-sm font-bold transition">
+                        <i class="fa-brands fa-youtube text-base"></i>
+                        <span data-i18n="footerWatchBtn">شاهد الفيديو على يوتيوب</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Prominently Featured Signature Block -->
+            <div class="p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-emerald-500/10 via-amber-500/10 to-teal-500/10 border border-emerald-500/30 text-center space-y-1.5 shadow-sm">
+                <div class="flex items-center justify-center gap-2 text-emerald-600 dark:text-emerald-400 text-sm">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span class="font-black text-base sm:text-lg text-slate-900 dark:text-white">
+                        تصميم محمد عوض خير بمساعدة Gemini 4 Argon
+                    </span>
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <p id="footer-sub-credit" class="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                    Designed by Mohamed Awad Kheir with the help of Gemini 4 Argon
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- APPLICATION LOGIC & BILINGUAL DATA STORE -->
+    <script>
+        // Current State
+        let currentLang = 'ar';
+        let currentPillarIndex = 0;
+        let checkedRights = new Set([0, 3, 5]); // Pre-check a few to look lively
+        let compassAnswers = [2, 2, 2, 2, 2, 2]; // 2 = Food (High), 1 = Medicine (Mid), 0 = Disease (Low)
+        let selfQuizScores = [85, 80, 75, 90, 85, 80];
+
+        // Bilingual Dictionary
+        const i18n = {
+            ar: {
+                navBrandTitle: "ميثاق الصداقة",
+                navBrandSub: "حقوق الصديق • Abouawd Studio",
+                navPillars: "محاور الكتاب",
+                navTypes: "أنواع الأصدقاء الـ3",
+                navTests: "اختبارات المواقف",
+                navRights: "الحقوق الـ6",
+                navCompass: "بوصلة الصديق",
+                navQuiz: "اختبر وفاءك",
+                navCard: "بطاقة شكر",
+                openYoutubeDirect: "فتح في يوتيوب",
+                heroBadge: "خلاصة تفاعلية لكتاب «حقوق الصديق وكيف تتعامل معه» • الشيخ أحمد بن ناصر الطيار",
+                heroTitlePart1: "من هو الصديق الحقيقي",
+                heroTitlePart2: "وكيف تحافظ عليه؟",
+                heroDescription: "كم شخصاً في حياتك تطلق عليه كلمة «صديق»؟ وهل كل من يبتسم في وجهك أو يجلس معك وقت الفراغ هو صديق حقيقي؟ رحلة معرفية وعملية تفاعلية مستوحاة من فيديو قناة Abouawd Studio لاكتشاف معدن الأصدقاء وفنون الحفاظ على المودة.",
+                heroQuoteLabel: "الخلاصة الذهبية للصداقة [00:05:32]",
+                heroQuoteText: "«الصديق الحقيقي هو من إذا غبتَ حفظك، وإذا أخطأتَ عذرك، وإذا احتجته وجدته بجانبك»",
+                heroBtnCompass: "جرّب بوصلة تصنيف الصديق",
+                heroBtnWatch: "مشاهدة الفيديو الأصلي",
+                cardBookTag: "بطاقة المصدر المعرفي",
+                cardBookTitle: "كتاب: حقوق الصديق وكيف تتعامل معه",
+                cardBookAuthor: "تأليف: الشيخ أحمد بن ناصر الطيار • عرض: Abouawd Studio",
+                timelineHeading: "خريطة محاور الفيديو التفاعلية (اضغط للانتقال):",
+                ch1Title: "معنى الصداقة ولماذا الصديق من «الصدق»؟",
+                ch2Title: "أنواع الأصدقاء الـ3: الغذاء والدواء والداء",
+                ch3Title: "الاختبارات الـ3 لكشف الصديق الحقيقي",
+                ch4Title: "حقوق الصديق الـ6 والقاعدة الذهبية",
+                ch5Title: "كيف نطبق هذا في حياتنا؟ (اختبار عملي)",
+                statTypes: "أصناف للأصدقاء",
+                statTests: "مواقف كاشفة",
+                statRights: "حقوق وقواعد",
+                sec1Tag: "المحور الأول • [00:00:59 - 00:02:55]",
+                sec1Title: "جوهر الصداقة: لماذا سُمّي الصديق صديقاً؟",
+                sec1Sub: "الإنسان بطبيعته كائن اجتماعي لا يستطيع أن يعيش وحده، لكن الصداقة في ميزان الحكمة أعمق بكثير من مجرد قضاء وقت ممتع.",
+                meaningCardTitle: "الصداقة مشتقة من «الصدق»",
+                meaningCardDesc: "يؤكد الشيخ أحمد بن ناصر الطيار أن الصداقة ليست مجرد ضحك أو جلسات سمر، بل هي التزام أخلاقي ووفاء متبادل، وسُمّي الصديق صديقاً لثلاثة معانٍ عظيمة:",
+                صدق1Title: "الصدق في المحبة والمشاعر",
+                صدق1Desc: "محبة خالصة لله وبعيدة عن النفاق أو التملق أو المصالح المؤقتة.",
+                صدق2Title: "الصدق في النصيحة",
+                صدق2Desc: "يدلّك على الخير ويرشدك بلطف إذا أخطأت، ولا يجاملك على حساب دينك أو مصلحتك.",
+                صدق3Title: "الصدق في الموقف",
+                صدق3Desc: "ثبات ووُقوف حقيقي بجانبك في الأوقات الصعبة، لا مجرد وعود كلامية.",
+                meaningFooter: "الصديق الصالح يرفعك، والصديق السيئ قد يسحبك إلى الأسفل.",
+                keepCardTitle: "الحفاظ على الصديق أصعب من إيجاده!",
+                keepCardDesc: "يوضح الكتاب حقيقة مهمة جداً: قد تتعرف على صديق في موقف عابر، لكن استمرار الصداقة لسنوات طويلة يحتاج إلى ثلاث ركائز نفسية وأخلاقية (اضغط على كل ركيزة لاستكشافها):",
+                pillar1Name: "1. الصبر",
+                pillar2Name: "2. التغافل",
+                pillar3Name: "3. التسامح",
+                keepFooter: "من يبحث عن صديق بلا عيوب سيبقى بلا صديق!",
+                sec2Tag: "المحور الثاني • [00:01:59 - 00:02:27]",
+                sec2Title: "أنواع الأصدقاء الثلاثة في حياتك",
+                sec2Sub: "يقسّم العلماء والحكماء الناس في علاقاتهم إلى ثلاثة أصناف دقيقة تشبه علاقة الجسد بالغذاء والدواء والداء:",
+                type1Badge: "الصنف الأول • الأسمى",
+                type1Title: "1. أصدقاء كالغذاء",
+                type1Subtitle: "لا تستطيع الاستغناء عنهم في حياتك",
+                type1Desc: "هم الأصدقاء الحقيقيون الذين يقفون معك في كل الظروف، وجودهم يقوّي إيمانك وحياتك، ويبعث في نفسك الطمأنينة والسكينة تماماً كما يقوّي الغذاء الجسد.",
+                type1Trait1: "ناصح أمين في السر والعلن",
+                type1Trait2: "سند ثابت في الشدائد والأفراح",
+                type1Trait3: "يحفظ غيبتك ويستر عيبك",
+                type1Action: "الوصية: استمسك بهم وعضّ على صداقتهم بالنواجذ.",
+                type2Badge: "الصنف الثاني • المتوازن",
+                type2Title: "2. أصدقاء كالدواء",
+                type2Subtitle: "تحتاج إليهم في أوقات ومواقف معينة",
+                type2Desc: "تكون العلاقة معهم طيبة ومحترمة، وتتبادلون المنفعة والود في مواقف محددة أو زمالة عمل ودراسة، لكنها ليست علاقة عميقة أو يومية كصداقة الغذاء.",
+                type2Trait1: "علاقة قائمة على الاحترام المتبادل",
+                type2Trait2: "تعاون في مجالات أو أوقات محددة",
+                type2Trait3: "ليست مهيأة لمشاركة أدق الأسرار",
+                type2Action: "الوصية: عاملهم بالمعروف واللطف والإنصاف دون تكلف.",
+                type3Badge: "الصنف الثالث • الخطر",
+                type3Title: "3. أصدقاء كالداء",
+                type3Subtitle: "وجودهم ضرر وخطر على دينك ودنياك",
+                type3Desc: "هم أخطر الأنواع؛ لأن وجودهم في حياتك قد يفسد أخلاقك أو يستنزف طاقتك ووقتك، أو يجرّك إلى المعاصي والأخطاء والندم.",
+                type3Trait1: "يزيّنون الخطأ ويثبطونك عن الخير",
+                type3Trait2: "يتخلون عنك وقت الحاجة والشدة",
+                type3Trait3: "يكثرون السخرية أو الغيبة وإفشاء السر",
+                type3Action: "الوصية: ابتعد عنهم تدريجياً وبحكمة لحماية نفسك.",
+                sec3Tag: "المحور الثالث • [00:03:08 - 00:03:25]",
+                sec3Title: "كيف تعرف الصديق الحقيقي؟ (الاختبارات الثلاثة)",
+                sec3Sub: "الصداقة لا تظهر بالكلام الجميل في أوقات الرخاء، بل تظهر في المواقف الحقيقية. اضغط على الزر في كل بطاقة:",
+                test1Tag: "الاختبار الأول",
+                test1Title: "1. في السفر",
+                test1Summary: "السفر يكشف طباع الإنسان الحقيقية؛ ففي السفر يتعب الإنسان وتضيق نفسه، وتسقط الأقنعة والتكلف.",
+                test1DetailHeadline: "ماذا تلاحظ في السفر؟",
+                test1DetailBody: "هل يؤثرك على نفسه أم يكون أنانياً؟ هل يتحمل مشقة الطريق بابتسامة وتعاون أم يكثر التذمر والغضب؟ سُمّي السفر سفراً لأنه يُسفر عن أخلاق الرجال.",
+                test2Tag: "الاختبار الثاني",
+                test2Title: "2. وقت الضيق والشدة",
+                test2Summary: "عندما تحتاج إلى مساعدة حقيقية أو تمر بأزمة مالية أو صحية أو نفسية، يظهر من يقف بجانبك فعلاً.",
+                test2DetailHeadline: "ماذا تلاحظ وقت الضيق؟",
+                test2DetailBody: "في الرخاء يتكاثر الأصحاب حولك، أما عند المحنة فالصديق الصادق يبادر بالسؤال والعون قبل أن تطلب منه، بينما يختفي أصدقاء المصلحة.",
+                test3Tag: "الاختبار الثالث",
+                test3Title: "3. وقت الخلاف والغضب",
+                test3Summary: "لأن معدن الإنسان الحقيقي ونُبله يظهران عندما يغضب أو يختلف معك في الرأي أو المصلحة.",
+                test3DetailHeadline: "ماذا تلاحظ وقت الغضب؟",
+                test3DetailBody: "هل يحفظ الود القديم والأسرار عند الخلاف؟ أم ينسى كل خير ويفجر في الخصومة؟ الأصيل يغضب باعتدال ولا يهدم جسر المودة.",
+                btnRevealTest: "اكشف معيار الاختبار",
+                sec4Tag: "المحور الرابع • [00:03:35 - 00:04:52]",
+                sec4Title: "الحقوق الـ6 والقاعدة الذهبية للتعامل مع الصديق",
+                sec4Sub: "يركز كتاب «حقوق الصديق وكيف تتعامل معه» على 6 قواعد عملية تحفظ الصداقة من التآكل. يمكنك تحديد القواعد التي تطبقها لمتابعة تقدمك:",
+                rightsChecklistLabel: "مؤشر التزامك الشخصي بحقوق الصداقة:",
+                tool1Badge: "أداة تشخيصية تفاعلية #1",
+                tool1Title: "بوصلة تصنيف الصديق (غذاء • دواء • داء)",
+                tool1Sub: "ضع شخصاً معيناً في ذهنك وأجب عن هذه المواقف الـ 6 المستخلصة من معايير الكتاب لمعرفة تصنيف العلاقة وكيف تتعامل معه.",
+                btnReset: "إعادة ضبط",
+                compassNameLabel: "اسم أو رمز الصديق (اختياري - يبقى في متصفحك فقط):",
+                compassNamePlaceholder: "مثال: أحمد / صديق العمل...",
+                compassResultLabel: "نتيجة البوصلة الحالية",
+                tool2Badge: "أداة المحاسبة الذاتية #2 • [00:05:04]",
+                tool2Title: "كيف نطبق هذا في حياتنا؟ هل أنت صديق مخلص؟",
+                tool2Sub: "يقول الفيديو في الدقيقة [05:04]: «الأمر يبدأ منك أنت.. قبل أن تبحث عن صديق مثالي، اسأل نفسك: هل أنا صديق مخلص؟». حرك المؤشرات لتقييم نفسك بصدق:",
+                selfIndexLabel: "مؤشر الوفاء والنضج في الصداقة",
+                selfScoreSub: "درجة التطبيق العملي",
+                tool3Badge: "أداة تفاعلية #3 • مبادرة الوفاء [00:06:00]",
+                tool3Title: "اصنع بطاقة شكر لصديقك الحقيقي",
+                tool3Sub: "في ختام الفيديو: «إذا كان لديك صديق حقيقي، فتمسك به؛ فالأصدقاء الأوفياء عملة نادرة في هذا الزمان.. وشارك هذه الرسالة مع صديق تعتبره من الأوفياء».",
+                cardRecipientLabel: "اسم صديقك الوفي:",
+                cardRecipientPlaceholder: "مثال: أخي وصديقي عمر",
+                cardSenderLabel: "اسمك (المُرسل):",
+                cardSenderPlaceholder: "مثال: محمد",
+                cardQuoteSelectLabel: "اختر رسالة الإهداء:",
+                cardThemeLabel: "لون تصميم البطاقة:",
+                btnCopyCard: "نسخ نص الرسالة والإهداء",
+                previewHeaderBadge: "وسام الصديق الوفي • عملة نادرة",
+                previewToLabel: "إهداء خاص إلى:",
+                previewFromLabel: "بكل الود والوفاء من:",
+                previewBookRef: "مستلهم من كتاب «حقوق الصديق وكيف تتعامل معه»",
+                footerTitle: "من هو الصديق الحقيقي وكيف تحافظ عليه؟",
+                footerSource: "مبني على تلخيص كتاب «حقوق الصديق وكيف تتعامل معه» للشيخ أحمد بن ناصر الطيار • قناة Abouawd Studio",
+                footerWatchBtn: "شاهد الفيديو على يوتيوب"
+            },
+            en: {
+                navBrandTitle: "Friendship Charter",
+                navBrandSub: "Rights of a Friend • Abouawd Studio",
+                navPillars: "Book Pillars",
+                navTypes: "3 Types of Friends",
+                navTests: "3 True Tests",
+                navRights: "6 Golden Rights",
+                navCompass: "Friend Compass",
+                navQuiz: "Loyalty Quiz",
+                navCard: "Thank-You Card",
+                openYoutubeDirect: "Open in YouTube",
+                heroBadge: "Interactive Summary of 'The Rights of a Friend & How to Deal with Them' • Sheikh Ahmad Al-Tayyar",
+                heroTitlePart1: "Who is a True Friend",
+                heroTitlePart2: "& How Do You Keep Them?",
+                heroDescription: "How many people in your life do you call a 'friend'? Is everyone who smiles at you or sits with you in free time a true friend? An interactive guide inspired by Abouawd Studio's video to discover the true mettle of friends and the art of preserving affection.",
+                heroQuoteLabel: "The Golden Essence of Friendship [00:05:32]",
+                heroQuoteText: "“A true friend is one who protects you when you are absent, excuses you when you err, and stands by your side when you need them.”",
+                heroBtnCompass: "Try the Friend Compass Tool",
+                heroBtnWatch: "Watch Original Video",
+                cardBookTag: "Knowledge Source Card",
+                cardBookTitle: "Book: The Rights of a Friend & How to Deal with Them",
+                cardBookAuthor: "By Sheikh Ahmad bin Nasser Al-Tayyar • Video by Abouawd Studio",
+                timelineHeading: "Interactive Video Chapters (Click to Jump):",
+                ch1Title: "Meaning of Friendship & Why 'Sadiq' Comes from 'Sidq'",
+                ch2Title: "The 3 Types of Friends: Food, Medicine & Disease",
+                ch3Title: "The 3 Real-Life Tests that Reveal a True Friend",
+                ch4Title: "The 6 Rights of a Friend & The Golden Rule",
+                ch5Title: "How Do We Apply This in Our Lives? (Self-Quiz)",
+                statTypes: "Friend Categories",
+                statTests: "Revealing Tests",
+                statRights: "Rights & Rules",
+                sec1Tag: "Pillar One • [00:00:59 - 00:02:55]",
+                sec1Title: "Essence of Friendship: Why is a Friend Called 'Sadiq'?",
+                sec1Sub: "Humans are social beings who cannot live alone, but true friendship in Islamic wisdom is much deeper than merely spending fun times together.",
+                meaningCardTitle: "Friendship ('Sadaqah') is Derived from 'Sidq' (Sincerity)",
+                meaningCardDesc: "Sheikh Ahmad Al-Tayyar emphasizes that friendship is not just laughing together; it is moral commitment and mutual loyalty, rooted in three dimensions of truthfulness:",
+                صدق1Title: "Sincerity in Affection & Feelings",
+                صدق1Desc: "Pure love free from hypocrisy, flattery, or temporary self-interest.",
+                صدق2Title: "Sincerity in Advice",
+                صدق2Desc: "Guiding you to goodness and gently correcting you when you err, never flattering you at the expense of your values.",
+                صدق3Title: "Sincerity in Action & Stance",
+                صدق3Desc: "Steadfastness and truly standing by your side in hard times—not empty verbal promises.",
+                meaningFooter: "A righteous friend elevates you; a corrupt friend drags you down.",
+                keepCardTitle: "Keeping a Friend is Harder Than Finding One!",
+                keepCardDesc: "The book highlights a vital truth: you may meet a friend in a passing moment, but sustaining friendship for years requires three moral pillars (click each to explore):",
+                pillar1Name: "1. Patience",
+                pillar2Name: "2. Overlooking Faults",
+                pillar3Name: "3. Forgiveness",
+                keepFooter: "Whoever searches for a friend without flaws will remain without a friend!",
+                sec2Tag: "Pillar Two • [00:01:59 - 00:02:27]",
+                sec2Title: "The 3 Types of Friends in Your Life",
+                sec2Sub: "Scholars classify companions into three distinct categories resembling the body's relationship with food, medicine, and disease:",
+                type1Badge: "Category 1 • The Highest",
+                type1Title: "1. Friends Like Food",
+                type1Subtitle: "Indispensable nourishment for your life",
+                type1Desc: "These are true friends who stand by you in all circumstances. Their presence strengthens your faith and life, bringing peace to your heart just as food nourishes the body.",
+                type1Trait1: "Honest advisor in private and public",
+                type1Trait2: "Steadfast support in hardship and joy",
+                type1Trait3: "Protects your reputation in your absence",
+                type1Action: "Advice: Hold fast to them and cherish their rare bond.",
+                type2Badge: "Category 2 • Balanced",
+                type2Title: "2. Friends Like Medicine",
+                type2Subtitle: "Needed occasionally at specific times",
+                type2Desc: "Your relationship with them is polite, respectful, and mutually beneficial in specific contexts (work, study, or occasional help), though not an inner-circle bond.",
+                type2Trait1: "Built on mutual respect and courtesy",
+                type2Trait2: "Cooperation in specific spheres or times",
+                type2Trait3: "Not meant for sharing deepest personal secrets",
+                type2Action: "Advice: Treat them with kindness, fairness, and respect.",
+                type3Badge: "Category 3 • Dangerous",
+                type3Title: "3. Friends Like Disease",
+                type3Subtitle: "Harmful to your character, faith, and peace",
+                type3Desc: "The most dangerous category—their presence corrupts your morals, drains your energy, or pulls you toward mistakes, sins, and regret.",
+                type3Trait1: "Beautify wrongdoing & discourage goodness",
+                type3Trait2: "Abandon you in times of real need",
+                type3Trait3: "Mockery, backbiting, or betraying secrets",
+                type3Action: "Advice: Distance yourself wisely to protect your heart and life.",
+                sec3Tag: "Pillar Three • [00:03:08 - 00:03:25]",
+                sec3Title: "How to Recognize a True Friend (The 3 Real Tests)",
+                sec3Sub: "True friendship is not proven by sweet words in easy times, but by real-life situations. Click the button on each card:",
+                test1Tag: "First Test",
+                test1Title: "1. During Travel",
+                test1Summary: "Travel unveils a person's true nature; fatigue and changing routines strip away artificial masks and pretense.",
+                test1DetailHeadline: "What does travel reveal?",
+                test1DetailBody: "Do they prioritize your comfort or act selfishly? Do they handle travel difficulties with patience and cooperation or constant complaining? In Arabic, travel ('Safar') is so named because it unveils ('Yusfir') character.",
+                test2Tag: "Second Test",
+                test2Title: "2. In Times of Hardship",
+                test2Summary: "When you face financial, health, or emotional distress and need real support, you discover who truly stands by you.",
+                test2DetailHeadline: "What does hardship reveal?",
+                test2DetailBody: "In prosperity, companions are many; in adversity, a sincere friend rushes to help before being asked, while fair-weather friends vanish.",
+                test3Tag: "Third Test",
+                test3Title: "3. In Disagreement & Anger",
+                test3Summary: "Because a person's true nobility and moral mettle appear when they get angry or disagree with you.",
+                test3DetailHeadline: "What does anger reveal?",
+                test3DetailBody: "Do they honor past kindness and keep your secrets during a dispute? Or do they turn hostile and expose faults? A noble friend remains fair even when upset.",
+                btnRevealTest: "Reveal Test Criteria",
+                sec4Tag: "Pillar Four • [00:03:35 - 00:04:52]",
+                sec4Title: "The 6 Rights & The Golden Rule of Friendship",
+                sec4Sub: "The book focuses on 6 practical principles that protect friendship from erosion. Check off the principles you actively practice:",
+                rightsChecklistLabel: "Your Personal Friendship Commitment Progress:",
+                tool1Badge: "Interactive Diagnostic Tool #1",
+                tool1Title: "Friend Compass (Food • Medicine • Disease)",
+                tool1Sub: "Think of a specific friend and answer these 6 book-based scenarios to see their classification and tailored advice.",
+                btnReset: "Reset",
+                compassNameLabel: "Friend's Name or Initials (Optional - stays private in browser):",
+                compassNamePlaceholder: "e.g., Ahmad / Work Colleague...",
+                compassResultLabel: "Current Compass Classification",
+                tool2Badge: "Self-Reflection Tool #2 • [00:05:04]",
+                tool2Title: "How Do We Apply This? Are You a Loyal Friend?",
+                tool2Sub: "At [05:04], the video reminds us: 'It starts with you. Before looking for an ideal friend, ask yourself: Am I a loyal friend?'. Adjust the sliders honestly:",
+                selfIndexLabel: "Friendship Loyalty & Maturity Index",
+                selfScoreSub: "Practical Application Score",
+                tool3Badge: "Interactive Tool #3 • Loyalty Initiative [00:06:00]",
+                tool3Title: "Create a Thank-You Card for Your True Friend",
+                tool3Sub: "As the video concludes: 'If you have a true friend, hold onto them—loyal friends are a rare currency in this era. Share this message with a loyal friend.'",
+                cardRecipientLabel: "Your Loyal Friend's Name:",
+                cardRecipientPlaceholder: "e.g., My dear brother Omar",
+                cardSenderLabel: "Your Name (Sender):",
+                cardSenderPlaceholder: "e.g., Mohamed",
+                cardQuoteSelectLabel: "Choose Appreciation Message:",
+                cardThemeLabel: "Card Theme Color:",
+                btnCopyCard: "Copy Card Message to Clipboard",
+                previewHeaderBadge: "Loyal Friend Medal • A Rare Currency",
+                previewToLabel: "Special Dedication To:",
+                previewFromLabel: "With sincere loyalty from:",
+                previewBookRef: "Inspired by the book 'The Rights of a Friend'",
+                footerTitle: "Who is a True Friend & How to Keep Them?",
+                footerSource: "Based on the book 'The Rights of a Friend' by Sheikh Ahmad Al-Tayyar • Abouawd Studio",
+                footerWatchBtn: "Watch Video on YouTube"
+            }
+        };
+
+        // Data for the 3 Pillars of Keeping a Friend
+        const keepPillarsData = {
+            ar: [
+                {
+                    title: "1. الصبر على طباع الصديق وظروفه",
+                    desc: "لا يوجد إنسان خالٍ من القصور؛ فالصبر على اختلاف الطباع وتقلبات الظروف وضغوط الحياة هو الأساس الأول لبقاء الود وعدم انقطاع العلاقة عند أول عقبة."
+                },
+                {
+                    title: "2. التغافل عن الزلات الصغيرة (فن الكبار)",
+                    desc: "التغافل الذكي يعني أن ترى الهفوة الصغيرة أو الكلمة غير المقصودة فتتجاوزها كأنك لم ترها، ولا تدقق في كل صغيرة وكبيرة لأن التدقيق يستنزف المحبة."
+                },
+                {
+                    title: "3. التسامح والعفو عند الخطأ",
+                    desc: "إذا أخطأ صديقك أو قصر في حقك ثم اعتذر أو ندم، فالتسامح وسعة الصدر يعيدان للصداقة قوتها ونقاءها ويغلقان أبواب الشيطان والقطيعة."
+                }
+            ],
+            en: [
+                {
+                    title: "1. Patience with Temperaments & Circumstances",
+                    desc: "No human being is flawless. Patience with differing personalities, mood swings, and life pressures is the first foundation for lasting affection."
+                },
+                {
+                    title: "2. Overlooking Minor Slips (Al-Taghaful)",
+                    desc: "Wise overlooking means noticing a minor unintentional slip and letting it pass graciously without nitpicking—because constant scrutiny drains affection."
+                },
+                {
+                    title: "3. Forgiveness & Pardoning Mistakes",
+                    desc: "When a friend errs or falls short, forgiving with an open heart restores the purity of the bond and closes the door to resentment and estrangement."
+                }
+            ]
+        };
+
+        // Data for the 6 Rights of Friendship ([00:03:35] - [00:04:52])
+        const rightsData = {
+            ar: [
+                {
+                    time: "03:43",
+                    seconds: 223,
+                    icon: "fa-hand-holding-medical",
+                    color: "emerald",
+                    title: "1. الوقوف معه في الشدائد",
+                    desc: "الصديق الحقيقي لا يختفي عندما تمر بأزمة، بل يكون أول من يمد لك يد العون؛ لأن التخلي عن الصديق وقت الشدة من أعظم صور الخذلان."
+                },
+                {
+                    time: "03:58",
+                    seconds: 238,
+                    icon: "fa-hand-holding-dollar",
+                    color: "teal",
+                    title: "2. العطاء وعدم البخل",
+                    desc: "لا يبخل الصديق على صديقه بماله أو جاهه أو شفاعته أو مساعدته متى استطاع، فالجود يزرع المحبة الراسخة في القلوب."
+                },
+                {
+                    time: "04:08",
+                    seconds: 248,
+                    icon: "fa-face-smile-beam",
+                    color: "amber",
+                    title: "3. الاحترام حتى في المزاح",
+                    desc: "المزاح الجميل يقرب القلوب، لكن المزاح الجارح أو السخرية والاستهزاء قد يترك جرحاً غائراً في النفس لا يُنسى ويفسد الصداقة."
+                },
+                {
+                    time: "04:20",
+                    seconds: 260,
+                    icon: "fa-shield-halved",
+                    color: "sky",
+                    title: "4. التماس الأعذار وحسن الظن",
+                    desc: "الإنسان قد يخطئ أو ينشغل أو يمر بظروف صعبة لا تعلمها؛ لذلك احذر من سوء الظن، فإنه يدمّر أقوى العلاقات في لحظات."
+                },
+                {
+                    time: "04:33",
+                    seconds: 273,
+                    icon: "fa-scale-unbalanced",
+                    color: "rose",
+                    title: "5. تقليل العتاب (الصداقة ليست محكمة)",
+                    desc: "كما قال الحكماء: «كثرة العتاب تقتل المودة». الصداقة واحة راحة وليست محكمة يحاسب فيها كل طرف الآخر على كل كلمة وتصرف."
+                },
+                {
+                    time: "04:46",
+                    seconds: 286,
+                    icon: "fa-yin-yang",
+                    color: "purple",
+                    title: "6. القاعدة الذهبية: الاعتدال والتوازن",
+                    desc: "«أحبب حبيبك هوناً ما عسى أن يكون بغيضك يوماً ما، وأبغض بغيضك هوناً ما عسى أن يكون حبيبك يوماً ما» — التوازن يحميك من الصدمات."
+                }
+            ],
+            en: [
+                {
+                    time: "03:43",
+                    seconds: 223,
+                    icon: "fa-hand-holding-medical",
+                    color: "emerald",
+                    title: "1. Standing by Them in Adversity",
+                    desc: "A true friend never disappears during a crisis; they are the first to extend a helping hand. Abandoning a friend in distress is the ultimate betrayal."
+                },
+                {
+                    time: "03:58",
+                    seconds: 238,
+                    icon: "fa-hand-holding-dollar",
+                    color: "teal",
+                    title: "2. Generosity Without Stinginess",
+                    desc: "A sincere friend is generous with their wealth, status, time, and assistance whenever able, strengthening the bond of brotherhood."
+                },
+                {
+                    time: "04:08",
+                    seconds: 248,
+                    icon: "fa-face-smile-beam",
+                    color: "amber",
+                    title: "3. Respect Even While Joking",
+                    desc: "Lighthearted humor brings hearts closer, whereas hurtful jokes, ridicule, or mockery leave lasting emotional wounds that ruin friendships."
+                },
+                {
+                    time: "04:20",
+                    seconds: 260,
+                    icon: "fa-shield-halved",
+                    color: "sky",
+                    title: "4. Making Excuses & Good Assumption",
+                    desc: "People get busy or go through unseen struggles. Beware of suspicion (Su' al-Zann)—it destroys the strongest relationships from within."
+                },
+                {
+                    time: "04:33",
+                    seconds: 273,
+                    icon: "fa-scale-unbalanced",
+                    color: "rose",
+                    title: "5. Minimizing Reproach & Blame",
+                    desc: "As the wise said: 'Excessive reproach kills affection.' Friendship is a sanctuary of peace, not a courtroom where every word is put on trial."
+                },
+                {
+                    time: "04:46",
+                    seconds: 286,
+                    icon: "fa-yin-yang",
+                    color: "purple",
+                    title: "6. The Golden Rule: Moderation",
+                    desc: "“Love your beloved moderately, perhaps they may become your rival one day; and dislike moderately, perhaps they may become your beloved one day.”"
+                }
+            ]
+        };
+
+        // Data for Tool 1: Friend Compass Questions
+        const compassQuestionsData = {
+            ar: [
+                {
+                    q: "1. التأثير الأخلاقي والروحي: كيف يؤثر وجود هذا الشخص على قيمك وحياتك؟",
+                    options: [
+                        { val: 2, label: "يرفع همتي ويشجعني على الخير والنجاح" },
+                        { val: 1, label: "تأثيره محايد ومقتصر على الزمالة والود العام" },
+                        { val: 0, label: "يسحبني للأخطاء أو يستنزف طاقتي بالسلبية" }
+                    ]
+                },
+                {
+                    q: "2. اختبار الضيق والشدائد: كيف يتصرف عندما تمر بأزمة أو تحتاج لمساعدة؟",
+                    options: [
+                        { val: 2, label: "يبادر بالوقوف بجانبي قولاً وفعلاً دون تردد" },
+                        { val: 1, label: "يتعاطف معي بالكلام الطيب حسب استطاعته وظروفه" },
+                        { val: 0, label: "يختفي وقت الحاجة ولا يظهر إلا وقت المصلحة" }
+                    ]
+                },
+                {
+                    q: "3. حفظ الغيبة والأسرار: كيف يتعامل مع أسرارك وسمعتك في غيابك؟",
+                    options: [
+                        { val: 2, label: "يحفظ غيبتي ويدافع عني ويستر عيوبي" },
+                        { val: 1, label: "يحترمني لكن علاقتنا ليست عميقة لمشاركة الأسرار" },
+                        { val: 0, label: "قد يفشي السر أو يتحدث عني بسوء عند أول خلاف" }
+                    ]
+                },
+                {
+                    q: "4. وقت الغضب والخلاف: كيف يكون معدنه عندما تختلفان في الرأي؟",
+                    options: [
+                        { val: 2, label: "يبقى منصفاً نبيلاً ويحفظ الود القديم" },
+                        { val: 1, label: "يتجنب الصدام وتبقى العلاقة رسمية هادئة" },
+                        { val: 0, label: "يفجر في الخصومة وينسى كل معروف سابق" }
+                    ]
+                },
+                {
+                    q: "5. أسلوب المزاح والتعامل: كيف يمازحك أمام الآخرين؟",
+                    options: [
+                        { val: 2, label: "مزاح لطيف راقٍ يحفظ كرامتي ومشاعري" },
+                        { val: 1, label: "مزاح قليل ورسمي في حدود الأدب" },
+                        { val: 0, label: "مزاح جارح أو سخرية وإحراج أمام الناس" }
+                    ]
+                },
+                {
+                    q: "6. العتاب والتماس الأعذار: ماذا يفعل إذا انشغلت عنه أو قصّرت دون قصد؟",
+                    options: [
+                        { val: 2, label: "يلتمس لي العذر ويحسن الظن بي دائماً" },
+                        { val: 1, label: "لا يدقق كثيراً لأن تواصلنا موسمي أو محدد" },
+                        { val: 0, label: "يكثر اللوم والعتاب الثقيل ويسيء الظن فوراً" }
+                    ]
+                }
+            ],
+            en: [
+                {
+                    q: "1. Moral & Personal Impact: How does their presence affect your values and life?",
+                    options: [
+                        { val: 2, label: "Elevates my character & encourages goodness" },
+                        { val: 1, label: "Neutral, polite companionship in specific settings" },
+                        { val: 0, label: "Pulls me toward mistakes or drains my energy" }
+                    ]
+                },
+                {
+                    q: "2. Test of Hardship: How do they act when you face a crisis or need help?",
+                    options: [
+                        { val: 2, label: "Stands by my side in word and deed immediately" },
+                        { val: 1, label: "Offers kind words and occasional help when convenient" },
+                        { val: 0, label: "Disappears in hard times; only around for self-interest" }
+                    ]
+                },
+                {
+                    q: "3. Secrets & Absence: How do they handle your reputation when you are absent?",
+                    options: [
+                        { val: 2, label: "Protects my honor, defends me, and keeps secrets" },
+                        { val: 1, label: "Respectful, though we don't share deep secrets" },
+                        { val: 0, label: "May leak secrets or speak ill behind my back" }
+                    ]
+                },
+                {
+                    q: "4. Test of Anger & Disagreement: How do they behave when you disagree?",
+                    options: [
+                        { val: 2, label: "Remains fair, noble, and honors past affection" },
+                        { val: 1, label: "Keeps things polite and formal without deep conflict" },
+                        { val: 0, label: "Becomes hostile and forgets all past kindness" }
+                    ]
+                },
+                {
+                    q: "5. Humor & Respect: How do they joke with you in front of others?",
+                    options: [
+                        { val: 2, label: "Warm, respectful humor that honors my dignity" },
+                        { val: 1, label: "Polite and reserved interaction" },
+                        { val: 0, label: "Hurtful jokes, mockery, or public embarrassment" }
+                    ]
+                },
+                {
+                    q: "6. Excuses & Reproach: How do they react if you get busy or unintentionally fall short?",
+                    options: [
+                        { val: 2, label: "Makes excuses for me and assumes the best" },
+                        { val: 1, label: "Doesn't mind since our contact is occasional" },
+                        { val: 0, label: "Excessive blame, suspicion, and heavy reproach" }
+                    ]
+                }
+            ]
+        };
+
+        // Data for Tool 2: Self-Reflection Sliders
+        const selfQuizQuestionsData = {
+            ar: [
+                "1. أحفظ صديقي في غيابه وأدافع عن سمعته ولا أسمح لأحد باغتيابه أمامي.",
+                "2. ألتمس الأعذار لأصدقائي عند انشغالهم وأبتعد عن سوء الظن.",
+                "3. أمارس «فن التغافل» ولا أدقق في كل زلة أو خطأ غير مقصود.",
+                "4. أتجنب كثرة العتاب واللوم حتى لا تتحول الصداقة إلى محكمة.",
+                "5. أبادر بالوقوف مع صديقي وقت الضيق والشدة ولا أتخلى عنه.",
+                "6. أحترم مشاعر صديقي في المزاح وعند الخلاف وألتزم بالاعتدال."
+            ],
+            en: [
+                "1. I protect my friend in their absence and defend their reputation.",
+                "2. I make excuses for my friends when they are busy and avoid suspicion.",
+                "3. I practice 'Taghaful' (overlooking minor slips) instead of nitpicking mistakes.",
+                "4. I avoid excessive blame and reproach so friendship stays peaceful.",
+                "5. I proactively stand by my friend in times of hardship and need.",
+                "6. I respect my friend's feelings during jokes and remain fair during disagreements."
+            ]
+        };
+
+        // Data for Tool 3: Curated Quotes
+        const cardQuotesData = {
+            ar: [
+                "«الصديق الحقيقي هو من إذا غبتَ حفظك، وإذا أخطأتَ عذرك، وإذا احتجته وجدته بجانبك.. شكراً لأنك من الأصدقاء الذين هم كالغذاء للروح.»",
+                "«الأصدقاء الأوفياء عملة نادرة في هذا الزمان، وأنت يا صديقي من أجمل نعم الله في حياتي.. أدام الله بيننا الصدق والمودة.»",
+                "«تعلّمت أن الصداقة مشتقة من الصدق: صدق المحبة، وصدق النصيحة، وصدق الموقف.. وقد وجدت هذه المعاني كلها في صحبتك.»",
+                "«شكراً لأنك السند في وقت الضيق، والناصح الأمين في السر والعلن، والصديق الذي تزداد قيمته ومعدنه الأصيل مع الأيام.»"
+            ],
+            en: [
+                "“A true friend is one who protects you when you are absent, excuses you when you err, and stands by your side when you need them. Thank you for being like nourishment to the soul.”",
+                "“Loyal friends are a rare currency in this era, and your brotherhood is one of the greatest blessings in my life. May our bond always remain sincere.”",
+                "“True friendship is rooted in sincerity: sincere affection, sincere advice, and sincere support in hard times—and I have found all three in you.”",
+                "“Thank you for being a steadfast support in times of hardship and a noble companion whose true worth shines brighter with every passing year.”"
+            ]
+        };
+
+        // Initialize Page
+        window.addEventListener('DOMContentLoaded', () => {
+            renderKeepPillar();
+            renderRightsGrid();
+            renderCompassQuestions();
+            evaluateCompass();
+            renderSelfQuizSliders();
+            evaluateSelfQuiz();
+            populateCardQuotes();
+            updateAppreciationCard();
+        });
+
+        // Theme Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                icon.className = 'fa-solid fa-moon text-base sm:text-lg text-slate-700';
+                showToast(currentLang === 'ar' ? 'تم التفعيل: الوضع النهاري' : 'Switched to Light Mode');
+            } else {
+                html.classList.add('dark');
+                icon.className = 'fa-solid fa-sun text-base sm:text-lg text-amber-400';
+                showToast(currentLang === 'ar' ? 'تم التفعيل: الوضع الليلي (Dark Mode)' : 'Switched to Dark Mode');
+            }
+        }
+
+        // Language Toggle (AR RTL <-> EN LTR)
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            const html = document.documentElement;
+            html.lang = currentLang;
+            html.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+
+            document.getElementById('lang-btn-text').textContent = currentLang === 'ar' ? 'English' : 'العربية';
+
+            // Update all static elements with data-i18n
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18n[currentLang][key]) {
+                    el.textContent = i18n[currentLang][key];
+                }
+            });
+
+            // Update placeholders
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (i18n[currentLang][key]) {
+                    el.setAttribute('placeholder', i18n[currentLang][key]);
+                }
+            });
+
+            // Re-render dynamic interactive components
+            renderKeepPillar();
+            renderRightsGrid();
+            renderCompassQuestions();
+            evaluateCompass();
+            renderSelfQuizSliders();
+            evaluateSelfQuiz();
+            populateCardQuotes();
+            updateAppreciationCard();
+
+            showToast(currentLang === 'ar' ? 'تم التبديل إلى اللغة العربية' : 'Switched to English Language');
+        }
+
+        // Smooth Scroll Helper
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Video Player Modal at specific timestamp
+        function openVideoAt(seconds) {
+            const modal = document.getElementById('video-modal');
+            const iframe = document.getElementById('youtube-iframe');
+            iframe.src = `https://www.youtube.com/embed/QdljMPV8wLQ?start=${seconds}&autoplay=1&rel=0`;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('video-modal');
+            const iframe = document.getElementById('youtube-iframe');
+            iframe.src = '';
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Interactive Pillar Selector (Keeping a Friend)
+        function selectKeepPillar(idx) {
+            currentPillarIndex = idx;
+            renderKeepPillar();
+        }
+
+        function renderKeepPillar() {
+            const data = keepPillarsData[currentLang][currentPillarIndex];
+            document.getElementById('pillar-detail-title').textContent = data.title;
+            document.getElementById('pillar-detail-desc').textContent = data.desc;
+
+            for (let i = 0; i < 3; i++) {
+                const btn = document.getElementById(`pillar-btn-${i}`);
+                if (i === currentPillarIndex) {
+                    btn.className = "p-3 rounded-2xl border-2 border-amber-500 bg-amber-500/10 text-amber-700 dark:text-amber-300 font-bold text-xs sm:text-sm transition flex flex-col items-center gap-1.5 shadow-sm";
+                } else {
+                    btn.className = "p-3 rounded-2xl border-2 border-slate-200 dark:border-slate-800 hover:border-amber-500/50 text-slate-700 dark:text-slate-300 font-bold text-xs sm:text-sm transition flex flex-col items-center gap-1.5";
+                }
+            }
+        }
+
+        // Toggle Test Details (Travel, Hardship, Anger)
+        function toggleTestDetail(num) {
+            const box = document.getElementById(`test-detail-${num}`);
+            if (box.classList.contains('hidden')) {
+                box.classList.remove('hidden');
+            } else {
+                box.classList.add('hidden');
+            }
+        }
+
+        // Render 6 Rights Grid
+        function renderRightsGrid() {
+            const container = document.getElementById('rights-grid');
+            const list = rightsData[currentLang];
+            container.innerHTML = '';
+
+            list.forEach((item, index) => {
+                const isChecked = checkedRights.has(index);
+                const card = document.createElement('div');
+                card.className = `glass-card bg-white dark:bg-slate-900 rounded-3xl p-6 border-2 transition hover-lift flex flex-col justify-between ${
+                    isChecked ? 'border-emerald-500/70 dark:border-emerald-500/60 shadow-lg' : 'border-slate-200 dark:border-slate-800 shadow-sm'
+                }`;
+
+                card.innerHTML = `
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <div class="w-11 h-11 rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid ${item.icon}"></i>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <button onclick="openVideoAt(${item.seconds})" class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-600 dark:text-slate-400 hover:text-emerald-500 transition">
+                                    <i class="fa-solid fa-play text-[9px]"></i> ${item.time}
+                                </button>
+                                <button onclick="toggleRightCheck(${index})" class="w-8 h-8 rounded-xl flex items-center justify-center transition ${
+                                    isChecked ? 'bg-emerald-500 text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-400 hover:text-emerald-500'
+                                }" title="تحديد كعادة مطبقة">
+                                    <i class="fa-solid fa-check text-xs"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white mb-2">${item.title}</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">${item.desc}</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                        <button onclick="toggleRightCheck(${index})" class="text-xs font-bold ${
+                            isChecked ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-500 dark:text-slate-400'
+                        }">
+                            ${isChecked ? (currentLang === 'ar' ? '✓ أطبق هذه القاعدة' : '✓ Practicing this rule') : (currentLang === 'ar' ? '+ أضف إلى التزامي' : '+ Mark as practiced')}
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+
+            updateRightsProgress();
+        }
+
+        function toggleRightCheck(index) {
+            if (checkedRights.has(index)) {
+                checkedRights.delete(index);
+            } else {
+                checkedRights.add(index);
+            }
+            renderRightsGrid();
+        }
+
+        function updateRightsProgress() {
+            const count = checkedRights.size;
+            const pct = Math.round((count / 6) * 100);
+            document.getElementById('rights-progress-text').textContent = `${count} / 6 (${pct}%)`;
+            document.getElementById('rights-progress-bar').style.width = `${pct}%`;
+        }
+
+        // Render Tool 1: Friend Compass
+        function renderCompassQuestions() {
+            const container = document.getElementById('compass-questions-container');
+            const questions = compassQuestionsData[currentLang];
+            container.innerHTML = '';
+
+            questions.forEach((item, qIdx) => {
+                const block = document.createElement('div');
+                block.className = "p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200/70 dark:border-slate-800 space-y-3";
+
+                let optionsHtml = '';
+                item.options.forEach(opt => {
+                    const active = compassAnswers[qIdx] === opt.val;
+                    let activeClasses = 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-emerald-500/50';
+                    if (active) {
+                        if (opt.val === 2) activeClasses = 'bg-emerald-500/15 border-emerald-500 text-emerald-800 dark:text-emerald-300 font-bold';
+                        if (opt.val === 1) activeClasses = 'bg-amber-500/15 border-amber-500 text-amber-800 dark:text-amber-300 font-bold';
+                        if (opt.val === 0) activeClasses = 'bg-rose-500/15 border-rose-500 text-rose-800 dark:text-rose-300 font-bold';
+                    }
+
+                    optionsHtml += `
+                        <button onclick="setCompassAnswer(${qIdx}, ${opt.val})" class="p-3 rounded-xl border-2 text-xs sm:text-sm text-start transition flex items-center justify-between gap-2 ${activeClasses}">
+                            <span>${opt.label}</span>
+                            ${active ? '<i class="fa-solid fa-circle-check shrink-0"></i>' : ''}
+                        </button>
+                    `;
+                });
+
+                block.innerHTML = `
+                    <h4 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white">${item.q}</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-2.5">
+                        ${optionsHtml}
+                    </div>
+                `;
+                container.appendChild(block);
+            });
+        }
+
+        function setCompassAnswer(qIdx, val) {
+            compassAnswers[qIdx] = val;
+            renderCompassQuestions();
+            evaluateCompass();
+        }
+
+        function resetCompass() {
+            compassAnswers = [2, 2, 2, 2, 2, 2];
+            document.getElementById('compass-friend-name').value = '';
+            renderCompassQuestions();
+            evaluateCompass();
+            showToast(currentLang === 'ar' ? 'تمت إعادة ضبط بوصلة الصديق' : 'Friend Compass Reset');
+        }
+
+        function evaluateCompass() {
+            const total = compassAnswers.reduce((a, b) => a + b, 0); // Max 12
+            const pct = Math.round((total / 12) * 100);
+            const friendName = document.getElementById('compass-friend-name').value.trim();
+            const titleEl = document.getElementById('compass-result-title');
+            const descEl = document.getElementById('compass-result-desc');
+            const iconEl = document.getElementById('compass-result-icon');
+            const badgeEl = document.getElementById('compass-score-badge');
+            const headingEl = document.getElementById('compass-advice-heading');
+            const stepsEl = document.getElementById('compass-action-steps');
+
+            badgeEl.textContent = `${pct}% (${total}/12)`;
+            headingEl.textContent = currentLang === 'ar'
+                ? `توصية كتاب «حقوق الصديق»${friendName ? ' بخصوص (' + friendName + ')' : ''}:`
+                : `Book Recommendation${friendName ? ' regarding (' + friendName + ')' : ''}:`;
+
+            if (total >= 9) {
+                // Food (كالغذاء)
+                iconEl.className = "w-16 h-16 rounded-2xl bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 flex items-center justify-center text-3xl mx-auto";
+                iconEl.innerHTML = '<i class="fa-solid fa-wheat-awn"></i>';
+                titleEl.textContent = currentLang === 'ar' ? 'صديق كالغذاء (صديق حقيقي)' : 'Friend Like Food (True Friend)';
+                descEl.textContent = currentLang === 'ar'
+                    ? 'هذا الصديق عملة نادرة! يجمع بين الصدق في الموقف، وحفظ الغيبة، والوفاء وقت الضيق. يوصيك الشيخ أحمد الطيار بالحفاظ عليه بالصبر والتغافل عن الهفوات الصغيرة وتقليل العتاب.'
+                    : 'This friend is a rare gem! They combine sincerity in action, loyalty in hardship, and respect in absence. Hold onto them through patience, overlooking minor slips, and minimizing reproach.';
+                stepsEl.innerHTML = currentLang === 'ar'
+                    ? `<span class="px-3 py-1 rounded-lg bg-emerald-500/20 text-emerald-200 text-xs font-bold">✓ تمسّك به</span>
+                       <span class="px-3 py-1 rounded-lg bg-emerald-500/20 text-emerald-200 text-xs font-bold">✓ تغافل عن زلاته</span>
+                       <span class="px-3 py-1 rounded-lg bg-emerald-500/20 text-emerald-200 text-xs font-bold">✓ أرسل له بطاقة شكر بالأسفل</span>`
+                    : `<span class="px-3 py-1 rounded-lg bg-emerald-500/20 text-emerald-200 text-xs font-bold">✓ Cherish & Keep Them</span>
+                       <span class="px-3 py-1 rounded-lg bg-emerald-500/20 text-emerald-200 text-xs font-bold">✓ Overlook Minor Faults</span>`;
+            } else if (total >= 5) {
+                // Medicine (كالدواء)
+                iconEl.className = "w-16 h-16 rounded-2xl bg-amber-500/20 border border-amber-400/40 text-amber-300 flex items-center justify-center text-3xl mx-auto";
+                iconEl.innerHTML = '<i class="fa-solid fa-capsules"></i>';
+                titleEl.textContent = currentLang === 'ar' ? 'صديق كالدواء (علاقة متوازنة محدودة)' : 'Friend Like Medicine (Balanced / Occasional)';
+                descEl.textContent = currentLang === 'ar'
+                    ? 'علاقتك بهذا الشخص طيبة وفيها خير، لكنها ليست في دائرة الصداقة العميقة الكاملة. طبّق معه القاعدة الذهبية: «أحبب حبيبك هوناً ما»، وعامله بالاحترام والمعروف دون تحميل العلاقة فوق طاقتها.'
+                    : 'Your relationship is polite and beneficial in certain contexts, but not a deep inner-circle bond. Apply the Golden Rule of moderation: treat them with kindness and respect without over-relying on them.';
+                stepsEl.innerHTML = currentLang === 'ar'
+                    ? `<span class="px-3 py-1 rounded-lg bg-amber-500/20 text-amber-200 text-xs font-bold">⚖️ الاعتدال في التوقعات</span>
+                       <span class="px-3 py-1 rounded-lg bg-amber-500/20 text-amber-200 text-xs font-bold">🤝 حفظ الود والاحترام</span>`
+                    : `<span class="px-3 py-1 rounded-lg bg-amber-500/20 text-amber-200 text-xs font-bold">⚖️ Moderate Expectations</span>
+                       <span class="px-3 py-1 rounded-lg bg-amber-500/20 text-amber-200 text-xs font-bold">🤝 Maintain Mutual Respect</span>`;
+            } else {
+                // Disease (كالداء)
+                iconEl.className = "w-16 h-16 rounded-2xl bg-rose-500/20 border border-rose-400/40 text-rose-300 flex items-center justify-center text-3xl mx-auto";
+                iconEl.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
+                titleEl.textContent = currentLang === 'ar' ? 'صديق كالداء (علاقة ضارة تحذيرية)' : 'Friend Like Disease (Harmful Relationship)';
+                descEl.textContent = currentLang === 'ar'
+                    ? 'تشير إجاباتك إلى أن هذه العلاقة تستنزفك أو تضر بأخلاقك وكرامتك وتفتقد لأبسط حقوق الصداقة وقت الشدة أو الخلاف. يوصي الكتاب بالحذر والابتعاد التدريجي الحكيم لحماية دينك ونفسك.'
+                    : 'Your answers indicate this relationship drains your peace, harms your values, or lacks basic loyalty in hardship and disagreement. Wisely distance yourself to protect your heart and character.';
+                stepsEl.innerHTML = currentLang === 'ar'
+                    ? `<span class="px-3 py-1 rounded-lg bg-rose-500/20 text-rose-200 text-xs font-bold">🛡️ لا تشاركه أسرارك الخاصة</span>
+                       <span class="px-3 py-1 rounded-lg bg-rose-500/20 text-rose-200 text-xs font-bold">🚶 تخفف من العلاقة بحكمة</span>`
+                    : `<span class="px-3 py-1 rounded-lg bg-rose-500/20 text-rose-200 text-xs font-bold">🛡️ Guard Your Secrets</span>
+                       <span class="px-3 py-1 rounded-lg bg-rose-500/20 text-rose-200 text-xs font-bold">🚶 Distance Yourself Wisely</span>`;
+            }
+        }
+
+        // Tool 2: Self-Reflection Sliders
+        function renderSelfQuizSliders() {
+            const container = document.getElementById('self-quiz-sliders');
+            const list = selfQuizQuestionsData[currentLang];
+            container.innerHTML = '';
+
+            list.forEach((qText, idx) => {
+                const val = selfQuizScores[idx];
+                const row = document.createElement('div');
+                row.className = "p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-800 space-y-2";
+                row.innerHTML = `
+                    <div class="flex items-center justify-between gap-2">
+                        <label class="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200">${qText}</label>
+                        <span id="self-slider-val-${idx}" class="px-2.5 py-0.5 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono text-xs font-bold shrink-0">${val}%</span>
+                    </div>
+                    <input type="range" min="0" max="100" step="5" value="${val}" oninput="updateSelfQuizScore(${idx}, this.value)" class="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer">
+                `;
+                container.appendChild(row);
+            });
+        }
+
+        function updateSelfQuizScore(idx, val) {
+            selfQuizScores[idx] = parseInt(val, 10);
+            document.getElementById(`self-slider-val-${idx}`).textContent = `${val}%`;
+            evaluateSelfQuiz();
+        }
+
+        function evaluateSelfQuiz() {
+            const avg = Math.round(selfQuizScores.reduce((a, b) => a + b, 0) / selfQuizScores.length);
+            document.getElementById('self-quiz-percentage').textContent = `${avg}%`;
+            const rankEl = document.getElementById('self-quiz-rank');
+            const feedbackEl = document.getElementById('self-quiz-feedback');
+
+            if (avg >= 80) {
+                rankEl.textContent = currentLang === 'ar' ? 'صديق وفيّ كالغذاء لمن حوله 🌟' : 'Loyal & Nourishing Friend 🌟';
+                feedbackEl.textContent = currentLang === 'ar'
+                    ? 'ما شاء الله! أنت تطبق جوهر كتاب «حقوق الصديق» بوعي عالٍ: تحفظ الغيبة، وتلتمس العذر، وتقف في الشدائد. استمر على هذا الخلق النبيل.'
+                    : 'Excellent! You embody the core teachings of the book: protecting friends in their absence, making excuses, and standing firm in hardship.';
+            } else if (avg >= 55) {
+                rankEl.textContent = currentLang === 'ar' ? 'صديق طيب يحتاج لمزيد من التغافل والصبر 🌱' : 'Good Friend Growing in Patience 🌱';
+                feedbackEl.textContent = currentLang === 'ar'
+                    ? 'لديك أصل طيب ونية صادقة، ويمكنك الارتقاء بصداقاتك أكثر عبر تقليل العتاب، وممارسة التغافل الذكي عن الهفوات الصغيرة.'
+                    : 'You have sincere intentions! You can elevate your friendships even further by minimizing reproach and practicing wise overlooking of minor slips.';
+            } else {
+                rankEl.textContent = currentLang === 'ar' ? 'تحتاج لمراجعة حقوق الصداقة مع من تحب 🔍' : 'Time to Renew Your Friendship Habits 🔍';
+                feedbackEl.textContent = currentLang === 'ar'
+                    ? 'تذكر نصيحة الفيديو [05:04]: الصداقة الحقيقية تبدأ منك أنت. ابدأ اليوم بالتوقف عن البحث عن الأخطاء، وبادر بالسؤال عن صديقك والوقوف بجانبه.'
+                    : 'Remember the video advice at [05:04]: True friendship starts with you. Begin today by stopping fault-finding and proactively supporting your friends.';
+            }
+        }
+
+        // Tool 3: Appreciation Card Generator
+        function populateCardQuotes() {
+            const select = document.getElementById('card-quote-select');
+            const currentIdx = select.selectedIndex >= 0 ? select.selectedIndex : 0;
+            select.innerHTML = '';
+            cardQuotesData[currentLang].forEach((q, idx) => {
+                const opt = document.createElement('option');
+                opt.value = idx;
+                opt.textContent = q.substring(0, 65) + '...';
+                select.appendChild(opt);
+            });
+            select.selectedIndex = currentIdx;
+        }
+
+        function updateAppreciationCard() {
+            const friendInput = document.getElementById('card-friend-input').value.trim();
+            const senderInput = document.getElementById('card-sender-input').value.trim();
+            const quoteIdx = document.getElementById('card-quote-select').value || 0;
+
+            document.getElementById('preview-friend-name').textContent = friendInput || (currentLang === 'ar' ? 'صديقي الوفي العزيز' : 'My Dear Loyal Friend');
+            document.getElementById('preview-sender-name').textContent = senderInput || (currentLang === 'ar' ? 'صديقك المحب' : 'Your Loyal Friend');
+            document.getElementById('preview-quote-text').textContent = cardQuotesData[currentLang][quoteIdx];
+        }
+
+        function setCardStyle(style) {
+            const card = document.getElementById('appreciation-card-preview');
+            if (style === 'emerald') {
+                card.className = "rounded-3xl p-8 sm:p-10 bg-gradient-to-br from-emerald-900 via-teal-950 to-slate-950 text-white shadow-2xl border-2 border-emerald-500/40 relative overflow-hidden transition-all";
+            } else if (style === 'amber') {
+                card.className = "rounded-3xl p-8 sm:p-10 bg-gradient-to-br from-amber-900 via-yellow-950 to-slate-950 text-white shadow-2xl border-2 border-amber-500/40 relative overflow-hidden transition-all";
+            } else {
+                card.className = "rounded-3xl p-8 sm:p-10 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-950 text-white shadow-2xl border-2 border-indigo-400/40 relative overflow-hidden transition-all";
+            }
+        }
+
+        function copyCardMessage() {
+            const friendName = document.getElementById('preview-friend-name').textContent;
+            const senderName = document.getElementById('preview-sender-name').textContent;
+            const quoteText = document.getElementById('preview-quote-text').textContent;
+
+            const fullText = currentLang === 'ar'
+                ? `🌿 وسام الصديق الوفي 🌿\nإهداء إلى: ${friendName}\n\n${quoteText}\n\nبكل الود والوفاء من: ${senderName}\n📺 مستلهم من فيديو: من هو الصديق الحقيقي وكيف تحافظ عليه؟ (https://youtu.be/QdljMPV8wLQ)`
+                : `🌿 Loyal Friend Appreciation 🌿\nDedicated to: ${friendName}\n\n${quoteText}\n\nWith sincere loyalty from: ${senderName}\n📺 Inspired by: Who is a True Friend & How to Keep Them? (https://youtu.be/QdljMPV8wLQ)`;
+
+            // Clipboard fallback for iframe environments
+            const textArea = document.createElement('textarea');
+            textArea.value = fullText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                showToast(currentLang === 'ar' ? 'تم نسخ بطاقة الشكر! يمكنك إرسالها لصديقك الآن 💚' : 'Appreciation Card copied to clipboard! 💚');
+            } catch (err) {
+                showToast(currentLang === 'ar' ? 'تعذر النسخ التلقائي' : 'Copy failed');
+            }
+            document.body.removeChild(textArea);
+        }
+
+        // Custom Toast Notification (No alert())
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = "px-5 py-3 rounded-2xl bg-slate-900/95 dark:bg-emerald-600 text-white text-xs sm:text-sm font-bold shadow-xl border border-white/10 flex items-center gap-2.5 transition-all duration-300";
+            toast.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-400 dark:text-white"></i><span>${message}</span>`;
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(10px)';
+                setTimeout(() => toast.remove(), 300);
+            }, 2600);
+        }
+    </script>
+</body>
+</html>
